@@ -1,0 +1,64 @@
+# Aigisは、この設定ファイルが存在するディレクトリと同じディレクトリから実行されます。
+# すべてのパスはこのファイルを基準にする必要があります。
+
+# 生成されるスタイルガイドのタイトルを指定します。
+name: Styleguide
+
+# スタイルガイドを生成するソースとなるファイル（またはディレクトリ）への相対的なパスを指定します。
+source:
+  - ../src/assets/css
+
+# aigisが解析をする対象となる拡張子を指定します。
+# sourceにディレクトリが指定された場合、aigisはsource_typeに記述されている拡張子のファイルをソースの対象にします。
+# デフォルトで.css .sass .scss .stylの4種類を対象とします。
+source_type:
+  - .css
+  - .md
+
+# スタイルガイドを出力するディレクトリを指定します。
+# 指定がない場合、aigis_config.ymlのあるフォルダにstyleguideフォルダを作成して出力されます。
+dest: ../docs/styleguide
+
+# スタイルガイドに必要なファイルやディレクトリを指定します。
+# 指定されたファイルやディレクトリはスタイルガイドの出力先（`dest:`）にコピーされます。
+dependencies:
+  - ./aigis_assets
+
+# markdownでインデックスページを生成します。
+index: ../src/assets/css/index.md
+
+# スタイルガイドを生成する際に利用するテンプレートエンジンを指定します。
+template_engine: jade
+
+# スタイルガイドの生成に必要なテンプレートファイルが格納されているディレクトリを指定します。
+# template_engineにjadeを指定している場合にはindex.jade layout.jadeを、
+# hbsを指定している場合にはindex.hbs layout.hbsが必要になります。
+template_dir: ./template_jade
+
+# logがtrueの場合、スタイルガイド生成の際に出力されるファイルの一覧などをコンソールに出力します。
+log: false
+
+# スタイルガイドのソースとなるファイルから全ての色を収集して、color.htmlに一覧を生成します。
+color_palette: true
+
+# コードブロックに特定のタイプが指定されている場合、
+# aigisはそのコードブロックを実際のHTMLとしてドキュメントに追加します。
+# これによってマークアップの例を示すとともにプレビューの表示も手軽に行なえます。
+# デフォルトではhtml jade ejs hbsのプレビューが有効になっています。
+transform:
+  - jade
+  - html
+
+# ```htmlなどで始まるコードブロックからHTMLのプレビューを生成するときに、
+# プレビューの外側の要素につくCSSのクラス名を指定します。
+preview_class: aigis-preview
+
+# 出力するページのグループを指定します。
+# categoryやtag以外にグルーピングして出力したい項目がある場合はoutput_collectionに追加します。
+output_collection:
+  - category
+  - tag
+
+# コードブロックのシンタックスハイライトを有効にするかを指定します。
+# 別のハイライトライブラリを使う場合ときなどはhighlight: falseとすることでaigisのハイライトをオフにできます。
+highlight: true

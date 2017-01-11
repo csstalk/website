@@ -1,0 +1,127 @@
+ /* #base
+   -------------------------------------------------------------------------- */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  font-size: calc((15 / 16) * 100%);
+  line-height: 1.6;
+
+  @media (--default) {
+    font-size: calc((16 / 16) * 100%);
+  }
+}
+
+/* 日本語 */
+html[lang^="ja"] {
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  /*font-family: "Noto Sans Japanese", sans-serif;*/
+}
+
+/* 英語 */
+html[lang^="en"] {
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  /*font-family: "Noto Sans", sans-serif;*/
+}
+
+/* 中国語(簡体字) */
+html[lang="zh-cn"] {
+  font-family: "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", sans-serif;
+  /*font-family: "Noto Sans SC", sans-serif;*/
+}
+
+body {
+  color: var(--color);
+  font-weight: var(--font-weight--normal);
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: auto;
+  font-kerning: normal;
+  background-color: var(--background-color);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+ul,
+ol {
+  padding-left: 1.5em;
+}
+
+/**
+ * `dt`と`dd`の左端を揃えます。
+ */
+dd {
+  margin-left: 0;
+}
+
+th {
+  font-weight: var(--font-weight--normal);
+}
+
+/**
+ * 日本語では斜体を使用しないためリセットします。
+ */
+[lang="ja"] i,
+[lang="ja"] cite,
+[lang="ja"] em,
+[lang="ja"] address,
+[lang="ja"] dfn {
+  font-style: normal;
+}
+
+/* 全角幅のフォント(和文フォントなど)にプロポーショナルメトリクスを指定します。 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-feature-settings: "palt";
+}
+
+b,
+strong {
+  font-weight: var(--font-weight--bold);
+}
+
+/**
+ * フルードイメージにします。
+ */
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+/* IE10以降`input[type="text"]`の入力内容の消去を非表示にします。 */
+input::-ms-clear {
+  visibility: hidden;
+}
+
+/* IE10以降の`input[type="password"]`のマスクの一時的解除を非表示にします。 */
+input::-ms-reveal {
+  visibility: hidden;
+}
+
+/* Normalize.cssをリセットします。 */
+figure {
+  margin: 0;
+}
+
+/* ブロック要素の上下のマージンをリセットします。 */
+h1, h2, h3, h4, h5, h6,
+ul, ol, dl,
+blockquote, p, address,
+hr,
+table,
+fieldset, figure,
+pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}
