@@ -82,7 +82,7 @@ gulp.task('html', () => {
   const locals = {
     'site': JSON.parse(fs.readFileSync(develop.json + 'site.json')),
     'data': JSON.parse(fs.readFileSync(develop.json + 'data.json'))
-  }
+  };
   return gulp.src(develop.pug)
   // エラーをポップアップで通知します。
   .pipe($.plumber({errorHandler: $.notify.onError("Error: <%= error.message %>")}))
