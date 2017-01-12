@@ -25,7 +25,7 @@ dependencies:
   - ./aigis_assets
 
 # markdownでインデックスページを生成します。
-index: ../src/assets/css/index.md
+index: ../src/assets/css/styleguide/index.md
 
 # スタイルガイドを生成する際に利用するテンプレートエンジンを指定します。
 template_engine: jade
