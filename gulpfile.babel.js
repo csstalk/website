@@ -35,7 +35,7 @@ const develop = {
   'css': ['src/assets/css/**/*.css', '!src/assets/css/**/_*.css'],
   'cssWatch': 'src/assets/css/**/*.css',
   'js': 'src/assets/js/main.js',
-  'image': ['src/**/*.{png,jpg,gif,svg}', '!src/assets/icon/*.svg', '!src/assets/font/*.svg'],
+  'img': ['src/**/*.{png,jpg,gif,svg}', '!src/assets/icon/*.svg', '!src/assets/font/*.svg'],
   'iconfont': 'src/assets/icon/*.svg',
   'iconfontCss': 'src/assets/icon/template/_icon.css',
   'iconfontHtml': 'src/assets/icon/template/_icon.html'
@@ -50,7 +50,7 @@ const release = {
   'css': 'docs/assets/css/',
   'js': 'docs/assets/js/',
   'iconfont': 'docs/assets/font/',
-  'iconfontCss': 'docs/assets/css/atoms/',
+  'iconfontCss': 'src/assets/css/atoms/',
   'iconfontHtml': 'docs/assets/iconfont/',
   'iconfontFont': 'docs/assets/font/'
 };
@@ -58,11 +58,9 @@ const release = {
 // 対応するブラウザの指定。
 const AUTOPREFIXER_BROWSERS = [
   // @see https://github.com/ai/browserslist#browsers
-  // Major Browsers（主要なブラウザの指定）
-  'last 2 version', // （Major Browsersの）最新2バージョン
+  'last 2 version', // （主要なブラウザの）最新2バージョン
   'ie >= 11', // IE11以上
   'iOS >= 8', // iOS8以上
-  // Other（Androidなどのマイナーなデバイスの指定）
   'Android >= 4.4' // Android4.4以上
 ];
 
@@ -112,13 +110,13 @@ gulp.task('css', () => {
     // `@import`規則でパーシャルファイルを連結します。
     atImport,
     cssnext({
-      // ベンダープレフィックスの付与します。
+      // ベンダープレフィックスを付与します。
       browsers: AUTOPREFIXER_BROWSERS
     }),
-    // インデントなどの整形します。
-    stylefmt,
+    // インデントなどの整形をします。
+    stylefmt
     // Minify（圧縮）します。
-    cssnano
+    // cssnano
   ];
   return gulp.src(develop.css)
   .pipe($.sourcemaps.init())
@@ -152,7 +150,7 @@ function bundle(watching = false) {
       .pipe(source('bundle.js'))
       .pipe(buffer())
       .pipe($.sourcemaps.init())
-      .pipe($.uglify())
+      // .pipe($.uglify())
       .pipe($.sourcemaps.write('.'))
       .pipe(gulp.dest(release.js));
   }
@@ -168,7 +166,7 @@ gulp.task('js', () => {
  * 画像ファイルを圧縮します。
  */
 gulp.task('img', () => {
-  return gulp.src(develop.image)
+  return gulp.src(develop.img)
   .pipe($.imagemin({
     // jpgをロスレス圧縮（画質を落とさず、メタデータを削除）。
     progressive: true,
@@ -183,15 +181,15 @@ gulp.task('img', () => {
 
 /**
  * SVGからアイコンフォントを生成します。
- * アイコンフォント用のCSSファイルとHTMLファイルも生成します。
+ * アイコンフォント用のCSSファイルとアイコンフォントの一覧をHTMLファイルで生成します。
  */
 gulp.task('iconfont', () => {
-  // シンボルフォント名を指定します。
+  // シンボルフォント名（font-family）を指定します。
   const fontName = 'iconfont';
   return gulp.src(develop.iconfont)
   .pipe($.iconfont({
     fontName: fontName,
-    formats: ['ttf', 'eot', 'woff', 'svg'],
+    formats: ['woff'],
     // SVGファイル名にUnicodeを付与します（recommended option）。
     prependUnicode: false
   }))
@@ -204,6 +202,7 @@ gulp.task('iconfont', () => {
       // CSSのクラス名を指定します。
       className: 'a-icon'
     };
+
     // CSSのテンプレートからCSSファイルを生成します。
     gulp.src(develop.iconfontCss)
     .pipe($.consolidate('lodash', options))
@@ -212,7 +211,8 @@ gulp.task('iconfont', () => {
       basename: '_icon'
     }))
     .pipe(gulp.dest(release.iconfontCss));
-    // アイコンフォントのサンプルHTMLを生成します。
+
+    // アイコンフォントの一覧をHTMLで生成します。
     gulp.src(develop.iconfontHtml)
     .pipe($.consolidate('lodash', options))
     .pipe($.rename({
