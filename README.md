@@ -41,7 +41,7 @@ npm install
 以下のコマンドを実行すると、開発に必要なGulpのタスクがすべて実行されます。
 
 ```
-npm run default
+npm start
 ```
 
 以下のような処理がおこなわれます。
