@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Styleguide</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="robots" content="noindex, nofollow">
+    <link href="../../aigis_assets/css/highlight/prism.css" rel="stylesheet">
+    <link href="../../aigis_assets/css/theme.css" rel="stylesheet">
+    <link href="/assets/css/common.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="aigis-container">
+      <div class="aigis-sidemenu">
+        <header class="aigis-header"><a href="../../index.html">Styleguide</a></header>
+        <h2 class="aigis-sidemenu__heading">Category</h2>
+        <nav class="aigis-categoryList"><ul data-path-depth="0"><li data-path-depth="0"><a href="../../category/Atoms/index.html">Atoms</a></li><li data-path-depth="0"><a href="../../category/Molecules/index.html">Molecules</a></li><li data-path-depth="0"><a href="../../category/Templates/index.html">Templates</a></li><li data-path-depth="0"><a href="../../category/Utility/index.html">Utility</a></li></ul>
+        </nav>
+        <h2 class="aigis-sidemenu__heading">Tag</h2>
+        <nav class="aigis-tags aigis-tagList"><a href="../../tag/Contents/index.html" class="aigis-tags__item aigis-tags__item--Contents">Contents</a><a href="../../tag/Embed/index.html" class="aigis-tags__item aigis-tags__item--Embed">Embed</a><a href="../../tag/Form/index.html" class="aigis-tags__item aigis-tags__item--Form">Form</a><a href="../../tag/Grid/index.html" class="aigis-tags__item aigis-tags__item--Grid">Grid</a><a href="../../tag/Heading/index.html" class="aigis-tags__item aigis-tags__item--Heading">Heading</a><a href="../../tag/Link/index.html" class="aigis-tags__item aigis-tags__item--Link">Link</a><a href="../../tag/List/index.html" class="aigis-tags__item aigis-tags__item--List">List</a><a href="../../tag/Navigation/index.html" class="aigis-tags__item aigis-tags__item--Navigation">Navigation</a><a href="../../tag/Text/index.html" class="aigis-tags__item aigis-tags__item--Text">Text</a>
+        </nav>
+        <h2 class="aigis-sidemenu__heading"><a href="../../color.html">All Colors</a></h2>
+      </div>
+      <div class="aigis-contents">
+        <div class="aigis-contents__body">
+          <nav>
+            <h2 class="aigis-module__heading">TOC</h2>
+            <ul class="aigis-moduleList">
+              <li class="aigis-moduleList__item"><a href="#list">list</a></li>
+            </ul>
+          </nav>
+          <div class="aigis-module">
+            <h2 id="list" class="aigis-module__heading">list</h2>
+            <div class="aigis-module__filepath">/src/assets/css/atoms/_list.css</div>
+            <ul class="aigis-tags">
+              <li class="aigis-tags__item aigis-tags__item--List">List</li>
+            </ul><p>リストアイテムの左に役物などを表示します。</p>
+<div class="aigis-preview">
+
+<ul class="t-content__text">
+  <li>デフォルトのulタグのリストです。
+    <ul>
+      <li>デフォルトのulタグのリストです。</li>
+      <li>デフォルトのulタグのリストです。</li>
+    </ul>
+  </li>
+  <li>デフォルトのulタグのリストです。</li>
+</ul>
+<ol class="t-content__text">
+  <li>デフォルトのolタグのリストです。
+    <ol>
+      <li>デフォルトのolタグのリストです。</li>
+      <li>デフォルトのolタグのリストです。</li>
+    </ol>
+  </li>
+  <li>デフォルトのulタグのリストです。</li>
+</ol>
+<ul class="a-list t-content__textSmall">
+  <li>リストです。複数行になったときの表示方法を確認します。複数行になったときの表示方法を確認します。複数行になったときの表示方法を確認します。</li>
+</ul>
+<ul class="a-list a-list--note t-content__text">
+  <li>注釈用のリストです。</li>
+  <li>注釈用のリストです。</li>
+</ul>
+<ol class="a-list a-list--noteOrder t-content__text">
+  <li>順序をつけた注釈用のリストです。</li>
+  <li>順序をつけた注釈用のリストです。</li>
+</ol>
+<ol class="a-list a-list--bracketOrder t-content__text">
+  <li>括弧をつけた順序リストです。</li>
+  <li>括弧をつけた順序リストです。</li>
+</ol>
+<ol class="a-list a-list--order t-content__text">
+  <li>入れ子に対応した順序リストです。</li>
+  <li>入れ子に対応した順序リストです。
+    <ol>
+      <li>入れ子に対応した順序リストです。</li>
+    </ol>
+  </li>
+</ol></div>
+
+<pre><code class="language-jade"><span class="token tag">ul.t-content__text</span>
+  <span class="token tag">li</span> <span class="token plain-text">デフォルトのulタグのリストです。</span>
+    <span class="token tag">ul</span>
+      <span class="token tag">li</span> <span class="token plain-text">デフォルトのulタグのリストです。</span>
+      <span class="token tag">li</span> <span class="token plain-text">デフォルトのulタグのリストです。</span>
+  <span class="token tag">li</span> <span class="token plain-text">デフォルトのulタグのリストです。</span>
+
+<span class="token tag">ol.t-content__text</span>
+  <span class="token tag">li</span> <span class="token plain-text">デフォルトのolタグのリストです。</span>
+    <span class="token tag">ol</span>
+      <span class="token tag">li</span> <span class="token plain-text">デフォルトのolタグのリストです。</span>
+      <span class="token tag">li</span> <span class="token plain-text">デフォルトのolタグのリストです。</span>
+  <span class="token tag">li</span> <span class="token plain-text">デフォルトのulタグのリストです。</span>
+
+<span class="token tag">ul.a-list.t-content__textSmall</span>
+  <span class="token tag">li</span> <span class="token plain-text">リストです。複数行になったときの表示方法を確認します。複数行になったときの表示方法を確認します。複数行になったときの表示方法を確認します。</span>
+
+<span class="token tag">ul.a-list.a-list--note.t-content__text</span>
+  <span class="token tag">li</span> <span class="token plain-text">注釈用のリストです。</span>
+  <span class="token tag">li</span> <span class="token plain-text">注釈用のリストです。</span>
+
+<span class="token tag">ol.a-list.a-list--noteOrder.t-content__text</span>
+  <span class="token tag">li</span> <span class="token plain-text">順序をつけた注釈用のリストです。</span>
+  <span class="token tag">li</span> <span class="token plain-text">順序をつけた注釈用のリストです。</span>
+
+<span class="token tag">ol.a-list.a-list--bracketOrder.t-content__text</span>
+  <span class="token tag">li</span> <span class="token plain-text">括弧をつけた順序リストです。</span>
+  <span class="token tag">li</span> <span class="token plain-text">括弧をつけた順序リストです。</span>
+
+<span class="token tag">ol.a-list.a-list--order.t-content__text</span>
+  <span class="token tag">li</span> <span class="token plain-text">入れ子に対応した順序リストです。</span>
+  <span class="token tag">li</span> <span class="token plain-text">入れ子に対応した順序リストです。</span>
+    <span class="token tag">ol</span>
+      <span class="token tag">li</span> <span class="token plain-text">入れ子に対応した順序リストです。</span>
+</code></pre>
+
+          </div>
+          <footer class="aigis-footer"></footer>
+        </div>
+      </div>
+    </div>
+    <script src="/assets/js/bundle.js"></script>
+  </body>
+</html>
