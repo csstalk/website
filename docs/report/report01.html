@@ -18,7 +18,125 @@
     <meta property="og:locale" content="ja">
   </head>
   <body>
-    <p>CSS Talk Vol.1の開催レポートです。</p>
+    <div class="t-wrapper">
+      <!-- 1カラム用-->
+      <div class="t-wrapper__1culumn">
+        <div class="t-wrapper__inner">
+          <main class="t-wrapper__content">
+            <!-- .p-reportでレポートページ専用のレイアウトやコンポーネントを指定する-->
+            <!-- 以下.p-report__summaryのようなElementあり-->
+            <article class="t-content p-report">
+              <header class="t-content__head">
+                <!-- 使い回すためMoluculeとする-->
+                <div class="m-hero">
+                  <div class="m-hero__inner">
+                    <h1 class="m-hero__logo"><img alt="CSS Talk Vol.1 2016年10月29日 土曜日"></h1>
+                  </div>
+                </div>
+              </header>
+              <!-- .p-report__innerでmax-width指定-->
+              <div class="t-content__body p-report__inner">
+                <div class="p-report__summary">
+                  <div class="p-report__summaryInner">
+                    <!-- 50%のグリッド-->
+                    <div class="p-report__summaryItem">
+                      <!-- レポートページ用の見出し-->
+                      <h2 class="a-headingReport">基本情報</h2>
+                      <dl class="m-basicInfo">
+                        <dt class="m-basicInfo__title">イベント名</dt>
+                        <dt class="m-basicInfo__description">CSS Talk Vol.1<br><a class="a-link" href="#">https://~</a></dt>
+                      </dl>
+                    </div>
+                    <div class="p-report__summaryItem">
+                      <h2 class="a-headingReport">タイムスケジュール</h2>
+                      <ol class="m-timeSchedule">
+                        <li class="m-timeSchedule__item">13:00 会場</li>
+                        <li class="m-timeSchedule__item">14:00~16:30 セッション（休憩10分）
+                          <!-- アイコンを付けるためのModifier-->
+                          <!-- アイコンは背景画像で表示する-->
+                          <ol class="m-timeSchedule__subItems m-timeSchedule__subItems--session">
+                            <li class="m-timeSchedule__subItem">「Review the OOCSS」 安田学</li>
+                            <li class="m-timeSchedule__subItem">「入社してから書き方を変えた話」 Daisuke konichi</li>
+                          </ol>
+                        </li>
+                        <li class="m-timeSchedule__item">16:30~18:00 懇親会（同会場にて）</li>
+                      </ol>
+                    </div>
+                  </div>
+                </div>
+                <div class="p-report__images">
+                  <!-- できればimgで（背景画像はIEのハイコントラストモードで表示されない）--><img>
+                </div>
+                <div class="p-report__sessions">
+                  <h2 class="a-headingReport">セッションスライド</h2>
+                  <div class="p-report__session">
+                    <!-- セッション用コンポーネント-->
+                    <div class="o-session">
+                      <div class="o-session__summary"><img class="o-session__image">
+                        <h3 class="o-session__title">「Review the OOCSS」</h3>
+                        <p class="o-session__name">安田学</p>
+                        <ul class="o-session__links">
+                          <li><a class="a-link" href="#">GitHub</a></li>
+                          <li><a class="a-link" href="#">Facebook</a></li>
+                        </ul>
+                      </div>
+                      <div class="o-session__slide">
+                        <!-- スライドサービスやアスペクト比によってModiferが変わる-->
+                        <div class="a-slide a-slide--slideshare"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="p-report__session">
+                    <div class="o-session">
+                      <div class="o-session__summary"><img class="o-session__image">
+                        <h3 class="o-session__title">「Review the OOCSS」</h3>
+                        <p class="o-session__name">安田学</p>
+                        <ul class="o-session__links">
+                          <li><a class="a-link" href="">GitHub</a></li>
+                          <li><a class="a-link" href="">Facebook</a></li>
+                        </ul>
+                      </div>
+                      <div class="o-session__slide">
+                        <div class="a-slide a-slide--speakerdeck"></div><a class="a-slide__caption"></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="p-report__surveyReport">
+                  <h2 class="a-headingReport">アンケート結果</h2>
+                  <div class="p-report__surveyReportItems">
+                    <!-- グリッド-->
+                    <div class="p-report__surveyReportItem">
+                      <!-- グラフは自動出力？-->
+                    </div>
+                  </div>
+                </div>
+                <div class="p-report__pager">
+                  <!-- ページャーコンポーネント-->
+                  <div class="m-pager"><a class="m-pager__prev">Vol.1を見る</a><a class="m-pager__top">Topへ戻る</a><a class="m-pager__next">Vol.3を見る</a></div>
+                </div>
+              </div>
+            </article>
+          </main>
+        </div>
+      </div>
+      <footer class="t-wrapper__footer">
+        <div class="o-footer">
+          <div class="o-footer__inner">
+            <div class="o-footer__logo"><img alt="CSS Talk"></div>
+            <div class="o-footer__links">
+              <div class="o-footer__link">
+                <div class="o-footer__contact"><a class="o-footer__contactLink"></a></div>
+              </div>
+              <div class="o-footer__link">
+                <div class="o-footer__share"><a class="o-footer__shareLink"></a><a class="o-footer__shareLink"></a></div>
+              </div>
+            </div>
+            <div class="o-footer__copyright"><small class="a-copyright">© CSS Talk, All rights reserved.</small></div>
+          </div>
+        </div>
+      </footer>
+    </div>
     <script src="/assets/js/bundle.js"></script>
   </body>
 </html>

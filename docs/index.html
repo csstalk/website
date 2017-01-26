@@ -18,7 +18,90 @@
     <meta property="og:locale" content="ja">
   </head>
   <body>
-    <p>Hello CSS Talk!!</p>
+    <div class="t-wrapper">
+      <!-- 1カラム用-->
+      <div class="t-wrapper__1culumn">
+        <!-- 2カラムにする場合用に残しておく-->
+        <div class="t-wrapper__inner">
+          <main class="t-wrapper__content">
+            <article class="t-content">
+              <header class="t-content__head">
+                <!-- トップページ専用なので`top`をつけて、Organismsとする-->
+                <div class="o-topHero">
+                  <div class="o-topHero__inner">
+                    <h1 class="o-topHero__logo"><img alt="CSS Talk"></h1>
+                  </div>
+                </div>
+              </header>
+              <div class="t-content__body">
+                <div class="o-topAbout">
+                  <div class="o-topAbout__inner">
+                    <h2 class="o-topAbout__heading a-heading2">about</h2>
+                    <p class="o-topAbout__lead">「CSS Talkは〜」</p>
+                    <p class="o-topAbout__text">CSSはWebサイト（またはWebサービス）を制作するうえで〜</p>
+                    <p class="o-topAbout__text">エンジニア同士で知識を深めるのも〜</p>
+                  </div>
+                </div>
+                <div class="o-topTalk">
+                  <div class="o-topTalk__body">
+                    <h2 class="o-topTalk__heading a-heading2"><span class="o-topTalk__headingDate">2017.01.28 sat</span>Next talk</h2>
+                    <p class="o-topTalk__text">次回の会場は〜<br>会場：</p>
+                    <div class="o-topTalk__buttonArea">
+                      <!-- `.o-topTalk__buttonArea`でボタンの色を変えてもいい--><a class="a-button a-button--more" href="">勉強会の詳細はこちら</a>
+                    </div>
+                  </div>
+                  <div class="o-topTalk__image"><img alt="CSS Talk Vol.3は2017年1月28日土曜日開催です。"></div>
+                </div>
+                <div class="o-topReport">
+                  <div class="o-topReport__body">
+                    <h2 class="o-topReport__heading a-heading2">Report</h2>
+                    <p class="o-topReport__text">過去に行われた〜</p>
+                    <div class="o-topReport__buttonArea"><a class="a-button a-button--more" href="" disabled>Coming soon</a></div>
+                  </div>
+                  <div class="o-topReport__image"><img alt="画像：登壇者が発表をしている様子"></div>
+                </div>
+              </div>
+              <!-- `.t-content__foot--top`で背景画像を表示する-->
+              <foot class="t-content__foot t-content__foot--top">
+                <div class="o-topRecruitment">
+                  <h2 class="o-topRecruitment__heading a-heading2">登壇者募集中です</h2>
+                  <p class="o-topRecruitment__text">CSS Talkでは登壇者を〜</p>
+                  <div class="o-topRecruitment__buttonArea"><a class="a-button a-button--more" href="">勉強会の詳細はこちら</a></div>
+                </div>
+                <div class="o-topAccess">
+                  <h2 class="o-topAccess__heading a-heading2">Access</h2>
+                  <p class="o-topAccess__text">会場：TAMコワーキング</p>
+                  <figure class="o-topAccess__mapArea"><a class="o-topAccess__map"></a><a class="o-topAccess__caption">view on Google Map</a></figure>
+                </div>
+                <div class="o-topBanner">
+                  <div class="o-topBanner__inner">
+                    <div class="o-topBanner__items"><a class="o-topBanner__item"><img alt="株式会社TAM"></a></div>
+                    <div class="o-topBanner__items"><a class="o-topBanner__item"><img alt="株式会社TAMの採用情報"></a></div>
+                    <div class="o-topBanner__items"><a class="o-topBanner__item"><img alt="TAM技術ブログ Tips Note"></a></div>
+                  </div>
+                </div>
+              </foot>
+            </article>
+          </main>
+        </div>
+      </div>
+      <footer class="t-wrapper__footer">
+        <div class="o-footer">
+          <div class="o-footer__inner">
+            <div class="o-footer__logo"><img alt="CSS Talk"></div>
+            <div class="o-footer__links">
+              <div class="o-footer__link">
+                <div class="o-footer__contact"><a class="o-footer__contactLink"></a></div>
+              </div>
+              <div class="o-footer__link">
+                <div class="o-footer__share"><a class="o-footer__shareLink"></a><a class="o-footer__shareLink"></a></div>
+              </div>
+            </div>
+            <div class="o-footer__copyright"><small class="a-copyright">© CSS Talk, All rights reserved.</small></div>
+          </div>
+        </div>
+      </footer>
+    </div>
     <script src="/assets/js/bundle.js"></script>
   </body>
 </html>
