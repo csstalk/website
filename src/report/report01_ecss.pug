@@ -1,0 +1,113 @@
+extend /_includes/_layout
+append variables
+  //- Required
+  - var pageTitle= "CSS Talk Vol.1の開催レポート";
+  - var pageDescription= site.description;
+  - var pageKeywords= site.keywords;
+  //- Optional
+  - var pageOgpTitle= pageTitle;
+  - var pageOgpImage= site.ogpImage
+  - var pageLang= "ja";
+  - var pageOgpType= "article";
+  //- Not modified
+  - var pageUrl= relativePath;
+
+block content
+  // `.common-` サイト共通ネームスペース（基本的なレイアウトやコンポーネントのベースになる）
+  // `.report-` /report/report.html 専用ネームスペース
+  .common-Wrapper
+    // グローバルヘッダー
+    header.common-Header
+
+    // コンテンツエリア
+    main.common-Body
+      article.home-Body
+
+        // メインビジュアルとロゴエリア
+        header.report-Hero
+          .report-Hero_Inner
+            h1.report-Hero_Logo
+
+        // ガターサイズはレポートページ側で指定する
+        .common-Grid.report-Grid
+          .common-Grid_Item
+            // 基本情報
+            section.BasicInfo
+              h2.report-Heading.BasicInfo-Heading
+              dl.BasicInfo-List
+                dt.BasicInfo-Title
+                dd.BasicInfo-Description
+                dt.BasicInfo-Title
+                dd.BasicInfo-Description
+          .common-Grid_Item
+            // タイムスケジュール
+            section.TimeSchedule
+              h2.report-Heading.TimeSchedule-Heading
+              ol.TimeSchedule-Lists
+                li.TimeSchedule-List
+                li.TimeSchedule-List
+                  ol.TimeSchedule-SubLists
+                    li.TimeSchedule-SubList
+                    li.TimeSchedule-SubList
+                li.TimeSchedule-List
+
+        // 会場の画像
+        .report-Image
+          img
+
+        // セッションスライド
+        section.report-Session
+          h2.report-Heading.report-Session_Heading
+          // 一人目（Slide Share）
+          section.report-Session_Items
+            .report-Session_Summary
+              img.report-Session_Image
+              h3.report-Session_Title
+              p.report-Session_Name
+              ul.report-Session_Links
+                li.report-Session_Link: a
+                li.report-Session_Link: a
+            .report-Session_SlideArea
+              .common-Slide.common-Slide-Slideshare
+          // 二人目（Speaker Deck）
+          section.report-Session_Items
+            .report-Session_Summary
+              img.report-Session_Image
+              h3.report-Session_Title
+              p.report-Session_Name
+              ul.report-Session_Links
+                li.report-Session_Link: a
+                li.report-Session_Link: a
+            .report-Session_SlideArea
+              .common-Slide.common-Slide-Speakerdeck
+          // 三人目（画像とリンク）
+          section.report-Session_Items
+            .report-Session_Summary
+              img.report-Session_Image
+              h3.report-Session_Title
+              p.report-Session_Name
+              ul.report-Session_Links
+                li.report-Session_Link: a
+                li.report-Session_Link: a
+            .report-Session_SlideArea
+              .report-Session_SlideImage
+              a.report-Session_SlideCaption
+
+        // アンケート結果
+        section.report-SurveyReport
+          h2.report-Heading.report-SurveyReport_Heading
+          .common-Grid.report-SurveyReport_Grid
+            .common-Grid_Item
+              // 自動生成？
+            .common-Grid_Item
+
+        // ページャー
+        .report-Pager
+          .report-Pager_Inner
+            a.report-Pager_Prev
+            a.report-Pager_Top
+            a.report-Pager_Next
+
+
+    // グローバルフッター
+    include /_includes/_footer_ecss

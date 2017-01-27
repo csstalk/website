@@ -1,0 +1,89 @@
+extend /_includes/_layout
+append variables
+  //- Required
+  - var pageTitle= "";
+  - var pageDescription= site.description;
+  - var pageKeywords= site.keywords;
+  //- Optional
+  - var pageOgpTitle= pageTitle;
+  - var pageOgpImage= site.ogpImage
+  - var pageLang= "ja";
+  - var pageOgpType= "website";
+  //- Not modified
+  - var pageUrl= relativePath;
+
+block content
+  // `.common-` サイト共通ネームスペース（基本的なレイアウトやコンポーネントのベースになる）
+  // `.home-` /index_ecss.html 専用ネームスペース
+  .common-Wrapper
+    // グローバルヘッダー
+    header.common-Header
+
+    // コンテンツエリア
+    main.common-Body
+      article.home-Body
+
+        // メインビジュアルとロゴエリア
+        header.home-Hero
+          .home-Hero_Inner
+            h1.home-Hero_Logo
+
+        // アバウト
+        section.home-About
+          .home-About_Inner
+            h2.home-Heading.home-About_Heading
+            p.home-About_Lead
+            p.home-About_Text
+            p.home-About_Text
+
+        // 次回予告
+        section.home-Talk
+          .home-Talk_Body
+            h2.home-Heading.home-Talk_Heading
+              span.home-Talk_SubHeading
+            p.home-Talk_Text
+            .home-Talk_ButtonArea
+              a.common-Button.home-Talk_Button
+          .home-Talk_ImageArea
+            img.home-Talk_Image
+
+        // レポートページ
+        section.home-Report
+          .home-Report_Body
+            h2.home-Heading.home-Report_Heading
+            p.home-Report_Text
+            .home-Report_ButtonArea
+              a.common-Button.home-Report_Button(disabled
+
+              )
+          .home-Report_ImageArea
+            img.home-Report_Image
+
+        // 登壇者募集・アクセス・バナーエリア
+        footer.home-Footer
+          .home-Footer_Inner
+            // 登壇者募集
+            section.home-Recruitment
+              h2.home-Heading.home-Recruitment_Heading
+              p.home-Recruitment_Text
+              .home-Recruitment_ButtonArea
+                a.common-Button.home-Recruitment_Button
+            // アクセス
+            section.home-Aceess
+              h2.home-Heading.home-Aceess_Heading
+              .home-Aceess_TextArea
+                p.home-Aceess_Text
+              .home-Aceess_MapArea
+                .home-Aceess_Map
+                a.home-Aceess_Caption
+            // バナー
+            aside.home-Banner
+              .home-Banner_Inner
+                .home-Banner_Items
+                  .home-Banner_Item
+                  .home-Banner_Item
+                  .home-Banner_Item
+
+
+    // グローバルフッター
+    include /_includes/_footer_ecss
