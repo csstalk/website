@@ -13,78 +13,78 @@ append variables
   - var pageUrl= relativePath;
 
 block content
-  .t-wrapper
+  // `.st-`（Structure） サイト共通の構造的なModuleのネームスペース
+  // `.sw-`（Site Wide） サイト共通の小さなModuleのネームスペース
+  // `.home-` /index_ecss.html 専用ネームスペース
+  .st-Wrapper
+    // グローバルヘッダー
+    header.st-Header
 
-    // 1カラム用
-    .t-wrapper__1culumn
-      // 2カラムにする場合用に残しておく
-      .t-wrapper__inner
-        main.t-wrapper__content
-          article.t-content
-            header.t-content__head
-              // トップページ専用なので`top`をつけて、Organismsとする
-              .o-topHero
-                .o-topHero__inner
-                  h1.o-topHero__logo: img(alt="CSS Talk")
+    // コンテンツラッパー
+    .st-Inner.st-Inner-1culumn
+      // コンテンツエリア
+      main.st-Contents
+        article.home-Contents
 
-            .t-content__body
-              .o-topAbout
-                .o-topAbout__inner
-                  h2.o-topAbout__heading.a-heading2 about
-                  p.o-topAbout__lead 「CSS Talkは〜」
-                  p.o-topAbout__text CSSはWebサイト（またはWebサービス）を制作するうえで〜
-                  p.o-topAbout__text エンジニア同士で知識を深めるのも〜
+          // メインビジュアルとロゴエリア
+          header.home-Hero
+            .home-Hero_Inner
+              h1.home-Hero_Logo
 
-              .o-topTalk
-                .o-topTalk__body
-                  h2.o-topTalk__heading.a-heading2
-                    span.o-topTalk__headingDate 2017.01.28 sat
-                    | Next talk
+          // アバウト
+          section.home-About
+            .home-About_Inner
+              h2.home-Heading.home-About_Heading
+              p.home-About_Lead
+              p.home-About_Text
+              p.home-About_Text
 
-                  p.o-topTalk__text 次回の会場は〜
-                    br
-                    | 会場：
-                  .o-topTalk__buttonArea
-                    // `.o-topTalk__buttonArea`でボタンの色を変えてもいい
-                    a.a-button.a-button--more(href="") 勉強会の詳細はこちら
-                .o-topTalk__image
-                  img(alt="CSS Talk Vol.3は2017年1月28日土曜日開催です。")
+          // 次回予告
+          section.home-Talk
+            .home-Talk_Body
+              h2.home-Heading.home-Talk_Heading
+                span.home-Talk_SubHeading
+              p.home-Talk_Text
+              .home-Talk_ButtonArea
+                a.sw-Button.home-Talk_Button
+            .home-Talk_ImageArea
+              img.home-Talk_Image
 
-              .o-topReport
-                .o-topReport__body
-                  h2.o-topReport__heading.a-heading2 Report
-                  p.o-topReport__text 過去に行われた〜
-                  .o-topReport__buttonArea
-                    a.a-button.a-button--more(href="" disabled) Coming soon
-                .o-topReport__image
-                  img(alt="画像：登壇者が発表をしている様子")
+          // レポートページ
+          section.home-Report
+            .home-Report_Body
+              h2.home-Heading.home-Report_Heading
+              p.home-Report_Text
+              .home-Report_ButtonArea
+                a.sw-Button.home-Report_Button(disabled)
+            .home-Report_ImageArea
+              img.home-Report_Image
 
-            // `.t-content__foot--top`で背景画像を表示する
-            foot.t-content__foot.t-content__foot--top
-              .o-topRecruitment
-                h2.o-topRecruitment__heading.a-heading2 登壇者募集中です
-                p.o-topRecruitment__text CSS Talkでは登壇者を〜
-                .o-topRecruitment__buttonArea
-                  a.a-button.a-button--more(href="") 勉強会の詳細はこちら
+          // 登壇者募集・アクセス・バナーエリア
+          footer.home-Footer
+            .home-Footer_Inner
+              // 登壇者募集
+              section.home-Recruitment
+                h2.home-Heading.home-Recruitment_Heading
+                p.home-Recruitment_Text
+                .home-Recruitment_ButtonArea
+                  a.sw-Button.home-Recruitment_Button
+              // アクセス
+              section.home-Aceess
+                h2.home-Heading.home-Aceess_Heading
+                .home-Aceess_TextArea
+                  p.home-Aceess_Text
+                .home-Aceess_MapArea
+                  .home-Aceess_Map
+                  a.home-Aceess_Caption
+              // バナー
+              aside.home-Banner
+                .home-Banner_Inner
+                  .home-Banner_Items
+                    .home-Banner_Item
+                    .home-Banner_Item
+                    .home-Banner_Item
 
-              .o-topAccess
-                h2.o-topAccess__heading.a-heading2 Access
-                p.o-topAccess__text 会場：TAMコワーキング
-                figure.o-topAccess__mapArea
-                  a.o-topAccess__map
-                  a.o-topAccess__caption view on Google Map
 
-
-              .o-topBanner
-                .o-topBanner__inner
-                  .o-topBanner__items
-                    a.o-topBanner__item
-                      img(alt="株式会社TAM")
-                  .o-topBanner__items
-                    a.o-topBanner__item
-                      img(alt="株式会社TAMの採用情報")
-                  .o-topBanner__items
-                    a.o-topBanner__item
-                      img(alt="TAM技術ブログ Tips Note")
-
+    // グローバルフッター
     include /_includes/_footer

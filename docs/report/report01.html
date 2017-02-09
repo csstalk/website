@@ -18,108 +18,120 @@
     <meta property="og:locale" content="ja">
   </head>
   <body>
-    <div class="t-wrapper">
-      <!-- 1カラム用-->
-      <div class="t-wrapper__1culumn">
-        <div class="t-wrapper__inner">
-          <main class="t-wrapper__content">
-            <!-- .p-reportでレポートページ専用のレイアウトやコンポーネントを指定する-->
-            <!-- 以下.p-report__summaryのようなElementあり-->
-            <article class="t-content p-report">
-              <header class="t-content__head">
-                <!-- 使い回すためMoluculeとする-->
-                <div class="m-hero">
-                  <div class="m-hero__inner">
-                    <h1 class="m-hero__logo"><img alt="CSS Talk Vol.1 2016年10月29日 土曜日"></h1>
-                  </div>
-                </div>
-              </header>
-              <!-- .p-report__innerでmax-width指定-->
-              <div class="t-content__body p-report__inner">
-                <div class="p-report__summary">
-                  <div class="p-report__summaryInner">
-                    <!-- 50%のグリッド-->
-                    <div class="p-report__summaryItem">
-                      <!-- レポートページ用の見出し-->
-                      <h2 class="a-headingReport">基本情報</h2>
-                      <dl class="m-basicInfo">
-                        <dt class="m-basicInfo__title">イベント名</dt>
-                        <dt class="m-basicInfo__description">CSS Talk Vol.1<br><a class="a-link" href="#">https://~</a></dt>
-                      </dl>
-                    </div>
-                    <div class="p-report__summaryItem">
-                      <h2 class="a-headingReport">タイムスケジュール</h2>
-                      <ol class="m-timeSchedule">
-                        <li class="m-timeSchedule__item">13:00 会場</li>
-                        <li class="m-timeSchedule__item">14:00~16:30 セッション（休憩10分）
-                          <!-- アイコンを付けるためのModifier-->
-                          <!-- アイコンは背景画像で表示する-->
-                          <ol class="m-timeSchedule__subItems m-timeSchedule__subItems--session">
-                            <li class="m-timeSchedule__subItem">「Review the OOCSS」 安田学</li>
-                            <li class="m-timeSchedule__subItem">「入社してから書き方を変えた話」 Daisuke konichi</li>
-                          </ol>
-                        </li>
-                        <li class="m-timeSchedule__item">16:30~18:00 懇親会（同会場にて）</li>
-                      </ol>
-                    </div>
-                  </div>
-                </div>
-                <div class="p-report__images">
-                  <!-- できればimgで（背景画像はIEのハイコントラストモードで表示されない）--><img>
-                </div>
-                <div class="p-report__sessions">
-                  <h2 class="a-headingReport">セッションスライド</h2>
-                  <div class="p-report__session">
-                    <!-- セッション用コンポーネント-->
-                    <div class="o-session">
-                      <div class="o-session__summary"><img class="o-session__image">
-                        <h3 class="o-session__title">「Review the OOCSS」</h3>
-                        <p class="o-session__name">安田学</p>
-                        <ul class="o-session__links">
-                          <li><a class="a-link" href="#">GitHub</a></li>
-                          <li><a class="a-link" href="#">Facebook</a></li>
-                        </ul>
-                      </div>
-                      <div class="o-session__slide">
-                        <!-- スライドサービスやアスペクト比によってModiferが変わる-->
-                        <div class="a-slide a-slide--slideshare"></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="p-report__session">
-                    <div class="o-session">
-                      <div class="o-session__summary"><img class="o-session__image">
-                        <h3 class="o-session__title">「Review the OOCSS」</h3>
-                        <p class="o-session__name">安田学</p>
-                        <ul class="o-session__links">
-                          <li><a class="a-link" href="">GitHub</a></li>
-                          <li><a class="a-link" href="">Facebook</a></li>
-                        </ul>
-                      </div>
-                      <div class="o-session__slide">
-                        <div class="a-slide a-slide--speakerdeck"></div><a class="a-slide__caption"></a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="p-report__surveyReport">
-                  <h2 class="a-headingReport">アンケート結果</h2>
-                  <div class="p-report__surveyReportItems">
-                    <!-- グリッド-->
-                    <div class="p-report__surveyReportItem">
-                      <!-- グラフは自動出力？-->
-                    </div>
-                  </div>
-                </div>
-                <div class="p-report__pager">
-                  <!-- ページャーコンポーネント-->
-                  <div class="m-pager"><a class="m-pager__prev">Vol.1を見る</a><a class="m-pager__top">Topへ戻る</a><a class="m-pager__next">Vol.3を見る</a></div>
-                </div>
+    <!-- `.st-`（Structure） サイト共通の構造的なModuleのネームスペース-->
+    <!-- `.sw-`（Site Wide） サイト共通の小さなModuleのネームスペース-->
+    <!-- `.report-` /report/report.html 専用ネームスペース-->
+    <div class="st-Wrapper">
+      <!-- グローバルヘッダー-->
+      <header class="st-Header"></header>
+      <!-- コンテンツラッパー-->
+      <div class="st-Inner st-Inner-1culumn">
+        <!-- コンテンツエリア-->
+        <main class="st-Contents">
+          <article class="report-Contents">
+            <!-- メインビジュアルとロゴエリア-->
+            <header class="report-Hero">
+              <div class="report-Hero_Inner">
+                <h1 class="report-Hero_Logo"></h1>
               </div>
-            </article>
-          </main>
-        </div>
+            </header>
+            <!-- ガターサイズはレポートページ側で指定する-->
+            <div class="sw-Grid report-Grid">
+              <div class="sw-Grid_Item">
+                <!-- 基本情報-->
+                <section class="report-Info">
+                  <h2 class="report-Heading report-Info_Heading"></h2>
+                  <dl class="report-Info">
+                    <dt class="report-Info_Title"></dt>
+                    <dd class="report-Info_Description"></dd>
+                    <dt class="report-Info_Title"></dt>
+                    <dd class="report-Info_Description"></dd>
+                  </dl>
+                </section>
+              </div>
+              <div class="sw-Grid_Item">
+                <!-- タイムスケジュール-->
+                <section class="report-TimeSchedule">
+                  <h2 class="report-Heading report-TimeSchedule_Heading"></h2>
+                  <ol class="report-Schedule">
+                    <li class="report-Schedule_List"></li>
+                    <li class="report-Schedule_List">
+                      <ol class="report-Schedule_SubLists">
+                        <li class="report-Schedule_SubList"></li>
+                        <li class="report-Schedule_SubList"></li>
+                      </ol>
+                    </li>
+                    <li class="report-Schedule_List"></li>
+                  </ol>
+                </section>
+              </div>
+            </div>
+            <!-- 会場の画像-->
+            <div class="report-FutureImage"><img></div>
+            <!-- セッションスライド-->
+            <section class="report-Session">
+              <h2 class="report-Heading report-Session_Heading"></h2>
+              <!-- 一人目（Slide Share）-->
+              <section class="report-Session_Item">
+                <div class="report-Session_Summary"><img class="report-Session_Image">
+                  <h3 class="report-Session_Title"></h3>
+                  <p class="report-Session_Name"></p>
+                  <ul class="report-Session_Links">
+                    <li class="report-Session_Link"><a></a></li>
+                    <li class="report-Session_Link"><a></a></li>
+                  </ul>
+                </div>
+                <div class="report-Session_SlideArea">
+                  <div class="report-Session_Slide report-Session_Slide-slideshare"></div>
+                </div>
+              </section>
+              <!-- 二人目（Speaker Deckとリンク）-->
+              <section class="report-Session_Item">
+                <div class="report-Session_Summary"><img class="report-Session_Image">
+                  <h3 class="report-Session_Title"></h3>
+                  <p class="report-Session_Name"></p>
+                  <ul class="report-Session_Links">
+                    <li class="report-Session_Link"><a></a></li>
+                    <li class="report-Session_Link"><a></a></li>
+                  </ul>
+                </div>
+                <div class="report-Session_SlideArea">
+                  <div class="report-Session_Slide report-Session_Slide-Speakerdeck"></div><a class="report-Session_SlideCaption"></a>
+                </div>
+              </section>
+              <!-- 三人目（画像とリンク）-->
+              <section class="report-Session_Item">
+                <div class="report-Session_Summary"><img class="report-Session_Image">
+                  <h3 class="report-Session_Title"></h3>
+                  <p class="report-Session_Name"></p>
+                  <ul class="report-Session_Links">
+                    <li class="report-Session_Link"><a></a></li>
+                    <li class="report-Session_Link"><a></a></li>
+                  </ul>
+                </div>
+                <div class="report-Session_SlideArea">
+                  <div class="report-Session_SlideImage"></div><a class="report-Session_SlideCaption"></a>
+                </div>
+              </section>
+            </section>
+            <!-- アンケート結果-->
+            <section class="report-Survey">
+              <h2 class="report-Heading report-Survey_Heading"></h2>
+              <div class="sw-Grid report-Survey_Grid">
+                <div class="sw-Grid_Item">
+                  <!-- 自動生成？-->
+                </div>
+                <div class="sw-Grid_Item"></div>
+              </div>
+            </section>
+            <!-- ページャー-->
+            <div class="report-Pager">
+              <div class="report-Pager_Inner"><a class="report-Pager_Prev"></a><a class="report-Pager_Top"></a><a class="report-Pager_Next"></a></div>
+            </div>
+          </article>
+        </main>
       </div>
+      <!-- グローバルフッター-->
       <footer class="t-wrapper__footer">
         <div class="o-footer">
           <div class="o-footer__inner">

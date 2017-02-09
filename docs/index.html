@@ -18,73 +18,85 @@
     <meta property="og:locale" content="ja">
   </head>
   <body>
-    <div class="t-wrapper">
-      <!-- 1カラム用-->
-      <div class="t-wrapper__1culumn">
-        <!-- 2カラムにする場合用に残しておく-->
-        <div class="t-wrapper__inner">
-          <main class="t-wrapper__content">
-            <article class="t-content">
-              <header class="t-content__head">
-                <!-- トップページ専用なので`top`をつけて、Organismsとする-->
-                <div class="o-topHero">
-                  <div class="o-topHero__inner">
-                    <h1 class="o-topHero__logo"><img alt="CSS Talk"></h1>
+    <!-- `.st-`（Structure） サイト共通の構造的なModuleのネームスペース-->
+    <!-- `.sw-`（Site Wide） サイト共通の小さなModuleのネームスペース-->
+    <!-- `.home-` /index_ecss.html 専用ネームスペース-->
+    <div class="st-Wrapper">
+      <!-- グローバルヘッダー-->
+      <header class="st-Header"></header>
+      <!-- コンテンツラッパー-->
+      <div class="st-Inner st-Inner-1culumn">
+        <!-- コンテンツエリア-->
+        <main class="st-Contents">
+          <article class="home-Contents">
+            <!-- メインビジュアルとロゴエリア-->
+            <header class="home-Hero">
+              <div class="home-Hero_Inner">
+                <h1 class="home-Hero_Logo"></h1>
+              </div>
+            </header>
+            <!-- アバウト-->
+            <section class="home-About">
+              <div class="home-About_Inner">
+                <h2 class="home-Heading home-About_Heading"></h2>
+                <p class="home-About_Lead"></p>
+                <p class="home-About_Text"></p>
+                <p class="home-About_Text"></p>
+              </div>
+            </section>
+            <!-- 次回予告-->
+            <section class="home-Talk">
+              <div class="home-Talk_Body">
+                <h2 class="home-Heading home-Talk_Heading"><span class="home-Talk_SubHeading"></span></h2>
+                <p class="home-Talk_Text"></p>
+                <div class="home-Talk_ButtonArea"><a class="sw-Button home-Talk_Button"></a></div>
+              </div>
+              <div class="home-Talk_ImageArea"><img class="home-Talk_Image"></div>
+            </section>
+            <!-- レポートページ-->
+            <section class="home-Report">
+              <div class="home-Report_Body">
+                <h2 class="home-Heading home-Report_Heading"></h2>
+                <p class="home-Report_Text"></p>
+                <div class="home-Report_ButtonArea"><a class="sw-Button home-Report_Button" disabled></a></div>
+              </div>
+              <div class="home-Report_ImageArea"><img class="home-Report_Image"></div>
+            </section>
+            <!-- 登壇者募集・アクセス・バナーエリア-->
+            <footer class="home-Footer">
+              <div class="home-Footer_Inner">
+                <!-- 登壇者募集-->
+                <section class="home-Recruitment">
+                  <h2 class="home-Heading home-Recruitment_Heading"></h2>
+                  <p class="home-Recruitment_Text"></p>
+                  <div class="home-Recruitment_ButtonArea"><a class="sw-Button home-Recruitment_Button"></a></div>
+                </section>
+                <!-- アクセス-->
+                <section class="home-Aceess">
+                  <h2 class="home-Heading home-Aceess_Heading"></h2>
+                  <div class="home-Aceess_TextArea">
+                    <p class="home-Aceess_Text"></p>
                   </div>
-                </div>
-              </header>
-              <div class="t-content__body">
-                <div class="o-topAbout">
-                  <div class="o-topAbout__inner">
-                    <h2 class="o-topAbout__heading a-heading2">about</h2>
-                    <p class="o-topAbout__lead">「CSS Talkは〜」</p>
-                    <p class="o-topAbout__text">CSSはWebサイト（またはWebサービス）を制作するうえで〜</p>
-                    <p class="o-topAbout__text">エンジニア同士で知識を深めるのも〜</p>
+                  <div class="home-Aceess_MapArea">
+                    <div class="home-Aceess_Map"></div><a class="home-Aceess_Caption"></a>
                   </div>
-                </div>
-                <div class="o-topTalk">
-                  <div class="o-topTalk__body">
-                    <h2 class="o-topTalk__heading a-heading2"><span class="o-topTalk__headingDate">2017.01.28 sat</span>Next talk</h2>
-                    <p class="o-topTalk__text">次回の会場は〜<br>会場：</p>
-                    <div class="o-topTalk__buttonArea">
-                      <!-- `.o-topTalk__buttonArea`でボタンの色を変えてもいい--><a class="a-button a-button--more" href="">勉強会の詳細はこちら</a>
+                </section>
+                <!-- バナー-->
+                <aside class="home-Banner">
+                  <div class="home-Banner_Inner">
+                    <div class="home-Banner_Items">
+                      <div class="home-Banner_Item"></div>
+                      <div class="home-Banner_Item"></div>
+                      <div class="home-Banner_Item"></div>
                     </div>
                   </div>
-                  <div class="o-topTalk__image"><img alt="CSS Talk Vol.3は2017年1月28日土曜日開催です。"></div>
-                </div>
-                <div class="o-topReport">
-                  <div class="o-topReport__body">
-                    <h2 class="o-topReport__heading a-heading2">Report</h2>
-                    <p class="o-topReport__text">過去に行われた〜</p>
-                    <div class="o-topReport__buttonArea"><a class="a-button a-button--more" href="" disabled>Coming soon</a></div>
-                  </div>
-                  <div class="o-topReport__image"><img alt="画像：登壇者が発表をしている様子"></div>
-                </div>
+                </aside>
               </div>
-              <!-- `.t-content__foot--top`で背景画像を表示する-->
-              <foot class="t-content__foot t-content__foot--top">
-                <div class="o-topRecruitment">
-                  <h2 class="o-topRecruitment__heading a-heading2">登壇者募集中です</h2>
-                  <p class="o-topRecruitment__text">CSS Talkでは登壇者を〜</p>
-                  <div class="o-topRecruitment__buttonArea"><a class="a-button a-button--more" href="">勉強会の詳細はこちら</a></div>
-                </div>
-                <div class="o-topAccess">
-                  <h2 class="o-topAccess__heading a-heading2">Access</h2>
-                  <p class="o-topAccess__text">会場：TAMコワーキング</p>
-                  <figure class="o-topAccess__mapArea"><a class="o-topAccess__map"></a><a class="o-topAccess__caption">view on Google Map</a></figure>
-                </div>
-                <div class="o-topBanner">
-                  <div class="o-topBanner__inner">
-                    <div class="o-topBanner__items"><a class="o-topBanner__item"><img alt="株式会社TAM"></a></div>
-                    <div class="o-topBanner__items"><a class="o-topBanner__item"><img alt="株式会社TAMの採用情報"></a></div>
-                    <div class="o-topBanner__items"><a class="o-topBanner__item"><img alt="TAM技術ブログ Tips Note"></a></div>
-                  </div>
-                </div>
-              </foot>
-            </article>
-          </main>
-        </div>
+            </footer>
+          </article>
+        </main>
       </div>
+      <!-- グローバルフッター-->
       <footer class="t-wrapper__footer">
         <div class="o-footer">
           <div class="o-footer__inner">
