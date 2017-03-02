@@ -1,63 +1,5 @@
 @charset "UTF-8";
 
-/**
- * SETTING
- * setting...Custom Propertiesを使ったグローバル変数です。
- *
- * TOOL
- * tool...Custom SelectorsやCustom Media Queries、@apply Ruleを使った汎用的なルールです。
- *
- * BASE
- * normalize...Normalize.cssをインポートしています。
- * base...タイプセレクタと属性セレクタのデフォルトスタイルです。
- *
- * ATOMS
- * icon...アイコンフォントです。テンプレートから自動で生成されます。
- * iconExtend...アイコンにスタイルを追加します。
- * title...`<h1>`で使われる見出しのスタイルです。
- * heading2...`<h2>`で使われるような見出しのスタイルです。
- * heading3...`<h3>`で使われるような見出しのスタイルです。
- * lead...視覚的に目立たせるときに使うスタイルです。
- * textEmphasis...強調や重要性を示すときに使います。
- * textAttention...注意や注目を引きたい場合に使います。
- * textSecondary...副次的な意味合いを持たせる場合に使います。
- * list...リストアイテムの左に役物などを表示します。
- * link...テキストリンクのデフォルトスタイルです。
- * linkMore...クリックを促すようなテキストリンクに使います。
- * linkExternal...外部リンクであることを示す場合に使います。
- * delimiter...`<hr>`のような区切り記号（デリミタ）です。
- * embed...Youtubeなどをレスポンシブ対応させます。
- * label...インラインで表示するラベルコンポーネントです。
- * button...ボタンのデフォルトスタイルです。
- *
- * MOLECULES
- * listInline...ボタンやラベル、テキストリンクなどを横並びにします。
- * figure...キャプションをつけた画像オブジェクトです。
- * table...`<table>`のベースとなるスタイルです。
- * media...画像とテキストが横並びになるオブジェクトです。
- * flag...画像とテキストが横並びになるオブジェクトです。垂直方向の指定ができます。
- * breadcrumb...パンくずリストオブジェクトです。
- *
- * ORGANISMS
- *
- * TEMPLATES
- * grid...汎用的なグリッドオブジェクトです。
- * header...グローバルヘッダーのレイアウトを指定します。
- * content...コンテンツエリアのレイアウトを指定します。
- * sidebar...サイドバーエリアのレイアウトを指定します。
- * footer...グローバルフッターのレイアウトを指定します。
- * wrapper...グローバルヘッダーやグローバルフッター、メインコンテンツやサイドバーといったサイトの基本となるレイアウトを指定します。
- *
- * PAGES
- * blog...ブログエリアのスタイルです。
- *
- * UTILITY
- * image...画像の汎用スタイルです。
- * text...テキストのスタイルに関するスタイルです。
- * display...`<br>`タグに指定をして、改行をブレイクポイントごとにコントロールします。
- * col...レスポンシブに対応した`width`プロパティを指定します。
- */
-
 /* =============================================================================
    #Setting
    ========================================================================== */
@@ -68,7 +10,7 @@
  * Custom Propertiesもカスケーディングの対象となるため、定数のように扱います。
  * 非対応ブラウザがある場合、変数はコード内に変換され、コメントのみが残ります。
  */
-@import "setting/_setting.css";
+@import "globalCSS/_setting.css";
 
 /* =============================================================================
    #Tool
@@ -78,7 +20,7 @@
  * Sassでは@functionや@mixinで定義します。
  * 非対応ブラウザがある場合、ルールはコード内に変換され、コメントのみが残ります。
  */
-@import "tool/_tool.css";
+@import "globalCSS/_tool.css";
 
 /* =============================================================================
    #Base
@@ -94,111 +36,18 @@
  * その他の要素やオブジェクトのサイズは`rem`と`em`で指定します。
  */
 @import "../../../node_modules/normalize.css/normalize.css";
-@import "base/_base.css";
+@import "globalCSS/_base.css";
 
 /* =============================================================================
-   #Atoms
+   #Namespace
    ========================================================================== */
 /**
- * Atoms（アトム）は機能的にこれ以上分割ができない最小の要素です。
- * 例えば、見出しやリスト、フォームラベルやボタンなどが該当します。
- * Atomic DesignにおけるAtomsは抽象的で目的をもたないものとされますが、
- * 役割をもった具体的なUIにすることも許容します。つまりAtoms単体で機能を拡張することもできます。
- * カラーパレットやアニメーションもAtomsとされていますが、SettingとToolに定義しています。
- * 後述するMoleculesとOrganismsのスタイルを継承できるように`em`での指定を基本とします。
- * テキストやリストのような文章を書くためのコンポーネントはAtoms単体で使用することがあります。
- * プレフィックス（接頭辞）として`.a-`をつけます。
+ * 名前空間ごとにディレクトリをわけます。
+ * globパターンで読み込まれるので、切り離しても動作するようにする必要があります。
+ *
+ * `.st-`(Structure)...ヘッダーやフッターのようなサイト共通のモジュール。
+ * `.sw-`(SiteWide)...サイト共通のコンポーネント
+ * `.tp-(`TopPage)...サイトトップページ。
+ * `.rd-`(ReportDetail)...レポート詳細ページ。
  */
-@import "atoms/_icon.css";
-@import "atoms/_iconExtend.css";
-@import "atoms/_title.css";
-@import "atoms/_heading2.css";
-@import "atoms/_heading3.css";
-@import "atoms/_lead.css";
-@import "atoms/_textEmphasis.css";
-@import "atoms/_textAttention.css";
-@import "atoms/_textSecondary.css";
-@import "atoms/_list.css";
-@import "atoms/_link.css";
-@import "atoms/_linkMore.css";
-@import "atoms/_linkExternal.css";
-@import "atoms/_delimiter.css";
-@import "atoms/_embed.css";
-@import "atoms/_label.css";
-@import "atoms/_button.css";
-
-/* =============================================================================
-   #Molecules
-   ========================================================================== */
-/**
- * Molecules（モルキュール）はAtomsを組み合わせた比較的シンプルなUIグループです。
- * 例えば、検索フォームはlabelとinput、buttonが組み合わさったMoleculesです。
- * Moleculesはシンプルで機能的なコンポーネントにすることを推奨します。
- * これにより、扱いやすく、メンテナンス性が高く、一貫性を保ったUIにすることができます。
- * 後述するOrganismsのスタイルを継承できるように`em`での指定を基本とします。
- * プレフィックス（接頭辞）として`.m-`をつけます。
- */
-@import "molecules/_inlineGroup.css";
-@import "molecules/_figure.css";
-@import "molecules/_table.css";
-@import "molecules/_media.css";
-@import "molecules/_flag.css";
-@import "molecules/_breadcrumb.css";
-
-/* =============================================================================
-   #Organisms
-   ========================================================================== */
-/**
- * Organisms（オルガニズム）はAtomsやMolecules、または複数のMoleculesを組み合わせた比較的複雑なUIグループです。
- * 例えば、グローバルヘッダーはロゴとグローバルナビゲーション、検索フォームなどが組み合わさったOrganismsです。
- * OrganismsはMoleculesよりも具体的なコンテキストをもつコンポーネントです。
- * プレフィックス（接頭辞）として`.o-`をつけます。
- */
-/*@import "organisms/_globalHeader";*/
-/*@import "organisms/_globalFooter";*/
-/*@import "organisms/_articleList";*/
-
-/* =============================================================================
-   #Templates
-   ========================================================================== */
-/**
- * Templates（テンプレート）はページレベルのオブジェクトで、
- * コンポーネント（Atoms・Molecules・Organisms）を配置してページの構成を整えます。
- * ワイヤーフレームのような大きなレイアウトから、コンポーネント単位のレイアウトまで様々です。
- * コンポーネントにダミーのテキストや画像を挿入することで、コンテンツの量や大きさによって
- * 意図しないデザインになってしまわないかをテストすることができます。
- * プレフィックス（接頭辞）として`.t-`をつけます。
- */
-@import "templates/_grid.css";
-@import "templates/_header.css";
-@import "templates/_content.css";
-@import "templates/_sidebar.css";
-@import "templates/_footer.css";
-@import "templates/_wrapper.css";
-
-/* =============================================================================
-   #Pages
-   ========================================================================== */
-/**
- * Pages（ページ）では実際のコンテンツを挿入して最終的な外観を確認します。
- * Templatesのバリエーションを定義することもできます。
- * 例えば、特定のページやカテゴリに対するスタイルを定義したり、動的にページの状態を変更したいときなどです。
- * プレフィックス（接頭辞）として`.p-`をつけます。
- */
-@import "pages/_blog.css";
-
-/* =============================================================================
-   #Utility
-   ========================================================================== */
-/**
- * Utilityレイヤーは汎用クラスを定義します。
- * シングルクラスでも確実にスタイルを適応させるために`!important`を指定することを推奨します。
- * コンポーネントがUtilityコンポーネントで成り立ってしまうことはできるだけ避けます。
- * Utilityコンポーネントは他のレイヤーが持つよりも汎用的に使えたり、コードが冗長になってしまう場合に使います。
- * pxのような絶対値ではなく、remや%のような相対値を指定することを推奨します。
- * プレフィックス（接頭辞）として`.u-`をつけます。
- */
-@import "utility/_image.css";
-@import "utility/_text.css";
-@import "utility/_break.css";
-@import "utility/_col.css";
+@import "../namespace/**/*.css";

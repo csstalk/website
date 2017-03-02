@@ -9,7 +9,7 @@ import path from 'path';
 
 // CSS
 import cssnext from 'postcss-cssnext';
-import atImport from 'postcss-import';
+import easyImport from 'postcss-easy-import';
 import stylefmt from 'stylefmt';
 import cssnano from 'cssnano';
 
@@ -31,9 +31,10 @@ import browserSync from 'browser-sync';
 const develop = {
   'root': 'src/',
   'pug': ['src/**/*.pug', '!' + 'src/**/_*.pug'],
+  'pugWatch': 'src/**/*.pug',
   'json': 'src/_data/',
-  'css': ['src/assets/css/**/*.css', '!src/assets/css/**/_*.css'],
-  'cssWatch': 'src/assets/css/**/*.css',
+  'css': 'src/assets/css/common.css',
+  'cssWatch': 'src/assets/**/*.css',
   'js': 'src/assets/js/main.js',
   'img': ['src/**/*.{png,jpg,gif,svg}', '!src/assets/icon/*.svg', '!src/assets/font/*.svg'],
   'iconfont': 'src/assets/icon/*.svg',
@@ -50,7 +51,7 @@ const release = {
   'css': 'docs/assets/css/',
   'js': 'docs/assets/js/',
   'iconfont': 'docs/assets/font/',
-  'iconfontCss': 'src/assets/css/atoms/',
+  'iconfontCss': 'src/assets/css/globalCSS',
   'iconfontHtml': 'docs/assets/iconfont/',
   'iconfontFont': 'docs/assets/font/'
 };
@@ -108,7 +109,9 @@ gulp.task('html', () => {
 gulp.task('css', () => {
   const plugins = [
     // `@import`規則でパーシャルファイルを連結します。
-    atImport,
+    easyImport({
+      glob: true
+    }),
     cssnext({
       // ベンダープレフィックスを付与します。
       browsers: AUTOPREFIXER_BROWSERS
@@ -200,7 +203,7 @@ gulp.task('iconfont', () => {
       // CSSファイルからfontファイルまでの相対パスを指定します。
       fontPath: '../font/',
       // CSSのクラス名を指定します。
-      className: 'a-icon'
+      className: 'sw-icon'
     };
 
     // CSSのテンプレートからCSSファイルを生成します。
@@ -267,7 +270,7 @@ gulp.task('build', ['iconfont'], function() {
  */
 gulp.task('watch', ['build'], () => {
   bundle(true);
-  gulp.watch(develop.pug, ['html']);
+  gulp.watch(develop.pugWatch, ['html']);
   gulp.watch(develop.cssWatch, ['css']);
   gulp.watch(develop.cssWatch, ['styleguide']);
   gulp.watch(develop.image, ['img']);

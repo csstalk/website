@@ -7,6 +7,7 @@ name: Styleguide
 # スタイルガイドを生成するソースとなるファイル（またはディレクトリ）への相対的なパスを指定します。
 source:
   - ../src/assets/css
+  - ../src/assets/namespace
 
 # aigisが解析をする対象となる拡張子を指定します。
 # sourceにディレクトリが指定された場合、aigisはsource_typeに記述されている拡張子のファイルをソースの対象にします。

@@ -9822,13 +9822,17 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.mainResizeManager = undefined;
 
-var _ResizeManager = require('./modules/ResizeManager');
+var _ResizeManager = require('./util/ResizeManager');
 
 var _ResizeManager2 = _interopRequireDefault(_ResizeManager);
 
-var _ScrollManager = require('./modules/ScrollManager');
+var _ScrollManager = require('./util/ScrollManager');
 
 var _ScrollManager2 = _interopRequireDefault(_ScrollManager);
+
+var _Module = require('../namespace/Structure/Module1/_Module1.js');
+
+var _Module2 = _interopRequireDefault(_Module);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -9842,6 +9846,8 @@ var mainResizeManager = exports.mainResizeManager = resizeManager;
 (function () {
   $(function () {
     console.log('page loaded');
+
+    (0, _Module2.default)();
 
     resizeManager.add(resized01);
     resizeManager.init();
@@ -9858,7 +9864,7 @@ var mainResizeManager = exports.mainResizeManager = resizeManager;
   };
 })();
 
-},{"./modules/ResizeManager":3,"./modules/ScrollManager":4,"jquery":1}],3:[function(require,module,exports){
+},{"../namespace/Structure/Module1/_Module1.js":5,"./util/ResizeManager":3,"./util/ScrollManager":4,"jquery":1}],3:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -10026,6 +10032,18 @@ var ScrollManager = function () {
 exports.default = ScrollManager;
 ;
 
-},{"../main":2,"jquery":1}]},{},[2]);
+},{"../main":2,"jquery":1}],5:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+window.jQuery = window.$ = require('jquery');
+
+exports.default = function () {
+  console.log('\u73FE\u5728\u306Elocation.pathname\u306F ' + location.pathname + ' \u3067\u3059\u3002');
+};
+
+},{"jquery":1}]},{},[2]);
 
 //# sourceMappingURL=bundle.js.map
