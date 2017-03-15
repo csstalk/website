@@ -66,14 +66,6 @@ const AUTOPREFIXER_BROWSERS = [
 ];
 
 /**
- * GitHub Pagesの独自ドメイン設定に必要なファイルです。
- */
-gulp.task('cname', () => {
-  gulp.src(develop.root + 'CNAME')
-  .pipe(gulp.dest(release.root));
-});
-
-/**
  * PugをHTMLにコンパイルします。
  */
 gulp.task('html', () => {
@@ -260,7 +252,7 @@ gulp.task('browser-sync', () => {
  */
 gulp.task('build', ['iconfont'], function() {
   runSequence(
-    ['html', 'css', 'js', 'img', 'cname'],
+    ['html', 'css', 'js', 'img'],
     'styleguide'
     )
 });
