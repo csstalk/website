@@ -1,0 +1,8 @@
+.home-Report {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.home-Report > * {
+  flex: 1;
+}

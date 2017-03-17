@@ -5,7 +5,7 @@ window.jQuery = window.$ = require('jquery');
 import ResizeManager from './util/ResizeManager';
 import ScrollManager from './util/ScrollManager';
 
-import StructureModule1 from '../namespace/Structure/Module1/_Module1.js';
+import StructureModule1 from '../namespace/TopPage/Module1/_Module1.js';
 
 const resizeManager = new ResizeManager();
 const scrollManager = new ScrollManager();

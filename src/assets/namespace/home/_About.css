@@ -1,0 +1,18 @@
+.home-About_Baloon {
+  color: #fff;
+  width: 530px;
+  height: 279px;
+  clip-path: url(#home-About_Clip);
+  margin: -200px auto 0;
+  background: linear-gradient(to left bottom, #A3D163, #45B27B);
+}
+.home-About_Heading {
+}
+.home-About_Lead {
+}
+
+.home-About_Clips {
+  position: absolute;
+  width: 0;
+  height: 0;
+}

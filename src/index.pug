@@ -13,77 +13,86 @@ append variables
   - var pageUrl= relativePath;
 
 block content
-  // `.st-`（Structure） サイト共通の構造的なModuleのネームスペース
-  // `.sw-`（Site Wide） サイト共通の小さなModuleのネームスペース
-  // `.home-` /index_ecss.html 専用ネームスペース
   .st-Wrapper
-    // グローバルヘッダー
-    header.st-Header
+    main
+      article
 
-    // コンテンツラッパー
-    .st-Inner.st-Inner-1culumn
-      // コンテンツエリア
-      main.st-Contents
-        article.home-Contents
+        //- ヘッダ
+        header.home-Hero
+          h1.home-Hero_Logo
+            img(src="/assets/img/home/main-logo.svg")
 
-          // メインビジュアルとロゴエリア
-          header.home-Hero
-            .home-Hero_Inner
-              h1.home-Hero_Logo
+        //- About
+        section.home-About
+          header.home-About_Baloon
+            h2.home-About_Heading.sw-Heading About
+            p.home-About_Lead CSS Talkとは？
 
-          // アバウト
-          section.home-About
-            .home-About_Inner
-              h2.home-Heading.home-About_Heading
-              p.home-About_Lead
-              p.home-About_Text
-              p.home-About_Text
+          h3 「CSS Talk」はCSSをテーマに話をする勉強会です。
+          p
+            |CSSはWebサイト（またはWebサービス）を制作するうえで欠かせないものです。<br>そしてエンジニアはもとより、デザイナーやディレクターも良いものを<br>作るためには知っておきたいことでもあります。
+          p
+            |エンジニア同士で知識を深めるも、デザイナーとディレクターを交えて<br>情報や考えを共有をするのもいいでしょう。<br>CSS Talkは職種を問わず、どなたでもご参加いただけます。
+          p
+            |時間に余裕をもたせた、緩やかな勉強会ですので、<br>お気軽にご参加ください。
 
-          // 次回予告
-          section.home-Talk
-            .home-Talk_Body
-              h2.home-Heading.home-Talk_Heading
-                span.home-Talk_SubHeading
-              p.home-Talk_Text
-              .home-Talk_ButtonArea
-                a.sw-Button.home-Talk_Button
-            .home-Talk_ImageArea
-              img.home-Talk_Image
+          svg.home-About_Clips
+            defs
+              clippath#home-About_Clip(clipPathUnits="objectBoundingBox")
+                polygon(points="0,0 1,0 1,.95 .53,.95 .5,1, .47,.95 0,.95")
 
-          // レポートページ
-          section.home-Report
-            .home-Report_Body
-              h2.home-Heading.home-Report_Heading
-              p.home-Report_Text
-              .home-Report_ButtonArea
-                a.sw-Button.home-Report_Button(disabled)
-            .home-Report_ImageArea
-              img.home-Report_Image
+        //- 次回予告
+        section.home-Next
+          - var nextTalkDate = "2017.04.22sat"
+          .home-Next_Body
+            h2.sw-Heading Next Talk
+            h3
+              time #{nextTalkDate}
+            p 次回の開催は 2017年4月22日(土)を予定しています
+            p 会場 : TAMコワーキング大阪 大阪市北区末広町3-7
+            a.sw-Button.home-Next_Button 勉強会の詳細はこちら
 
-          // 登壇者募集・アクセス・バナーエリア
-          footer.home-Footer
-            .home-Footer_Inner
-              // 登壇者募集
-              section.home-Recruitment
-                h2.home-Heading.home-Recruitment_Heading
-                p.home-Recruitment_Text
-                .home-Recruitment_ButtonArea
-                  a.sw-Button.home-Recruitment_Button
-              // アクセス
-              section.home-Aceess
-                h2.home-Heading.home-Aceess_Heading
-                .home-Aceess_TextArea
-                  p.home-Aceess_Text
-                .home-Aceess_MapArea
-                  .home-Aceess_Map
-                  a.home-Aceess_Caption
-              // バナー
-              aside.home-Banner
-                .home-Banner_Inner
-                  .home-Banner_Items
-                    .home-Banner_Item
-                    .home-Banner_Item
-                    .home-Banner_Item
+          .home-Next_EyeCatch
+            h2 CSS Talk
+            time #{nextTalkDate}
+            .home-Next_volume vol.
+              span.home-Next_volumeNumber 3
+
+        //- レポートページ
+        section.home-Report
+          .home-Report_Body
+            h2.sw-Heading Report
+            p 過去に行われた CSS Talk の開催レポート
+            btn.sw-Button.home-Report_Button(disabled=disabled) Coming Soon
+          .home-Report_EyeCatch
+            img(src="//placehold.it/100x100")
+
+    footer
+      //- 登壇者募集
+      section.home-Wanted
+        h2 登壇者募集中です
+        p テキストテキスト
+        a.sw-Button.home-Wanted_Button 登壇を申し込む
+
+      //- アクセス
+      section.home-Access
+        h2.sw-Heading Access
+        p 会場 : TAMコワーキング大阪
+        p 大阪市北区末広町3-7
+        img(src="//placehold.it/100x100")
+        small
+          a(href="#")
+
+      aside.home-BannerArea
+        .home-Banner_Item
+          a(href="#")
+            img(src="")
+        .home-Banner_Item
+          a(href="#")
+            img(src="")
+        .home-Banner_Item
+          a(href="#")
+            img(src="")
 
 
     // グローバルフッター

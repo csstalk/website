@@ -1,0 +1,8 @@
+.home-Next {
+  display: flex;
+  background-color: #43B27A;
+}
+
+.home-Next > * {
+  flex: 1;
+}
