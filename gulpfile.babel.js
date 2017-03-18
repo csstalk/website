@@ -24,6 +24,7 @@ import source from 'vinyl-source-stream';
 import runSequence from 'run-sequence';
 import rimraf from 'rimraf';
 import browserSync from 'browser-sync';
+import moment from 'moment';
 
 /**
  * 開発用用ディレクトリのパス。
@@ -88,6 +89,7 @@ gulp.task('html', () => {
   // 各ページごとの`/`を除いたルート相対パスを`relativePath`に格納します。
   .pipe($.data(function(file) {
     locals.relativePath = path.relative(file.base, file.path.replace(/.pug$/, '.html'));
+    locals.moment = moment;
       return locals;
   }))
   .pipe($.pug({

@@ -4,6 +4,10 @@ append variables
   - var pageTitle= "CSS Talk";
   - var pageDescription= site.description;
   - var pageKeywords= site.keywords;
+  //- 次回開催日
+  - var nextDate = "2017-04-22 15:30";
+  - var nextDateEn = moment(nextDate);
+  - var nextDateJp = moment(nextDate).locale('ja');
   //- Optional
   - var pageOgpTitle= pageTitle;
   - var pageOgpImage= site.ogpImage
@@ -44,18 +48,23 @@ block content
 
         //- 次回予告
         section.home-Next.home-Animate_bg.home-Heading
-          - var nextTalkDate = "2017.04.22sat"
           .home-Next_Body
             h2.sw-Heading Next Talk
             h3
-              time #{nextTalkDate}
-            p 次回の開催は 2017年4月22日(土)を予定しています
+              time(
+                datetime=nextDateJp.format('Y-MM-DD')
+                aria-label=nextDateJp.format('Y年M月D日ddd曜日')
+              ) #{nextDateEn.format('Y.MM.DDddd')}
+            p 次回の開催は #{nextDateJp.format('Y年M月D日(ddd)')}を予定しています
             p 会場 : TAMコワーキング大阪 大阪市北区末広町3-7
             a.sw-Button.home-Next_Button 勉強会の詳細はこちら
 
           .home-Next_EyeCatch
             h2 CSS Talk
-            time #{nextTalkDate}
+            time(
+              datetime=nextDateJp.format('Y-MM-DD')
+              aria-label=nextDateJp.format('Y年M月D日ddd曜日')
+            ) #{nextDateEn.format('Y.MM.DDddd')}
             .home-Next_volume vol.
               span.home-Next_volumeNumber 3
 
