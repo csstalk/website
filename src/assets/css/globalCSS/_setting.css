@@ -17,4 +17,6 @@
   --form--disabled-cursor: not-allowed;
   --form--disabled-opacity: 0.5;
   --form--disabled-background-color: #ddd;
+
+  --home--animated-background-color: #45b27b;
 }

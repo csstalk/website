@@ -1,0 +1,20 @@
+.home-Animate_bg {
+  background-color: var(--home--animated-background-color);
+  animation: home-Animate_bg 60s linear infinite;
+}
+
+
+@keyframes home-Animate_bg {
+  0% {
+    background-color: var(--home--animated-background-color);
+  }
+  33% {
+    background-color: #ff0;
+  }
+  66% {
+    background-color: #0ff;
+  }
+  100% {
+    background-color: var(--home--animated-background-color);
+  }
+}

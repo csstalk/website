@@ -1,7 +1,7 @@
 extend /_includes/_layout
 append variables
   //- Required
-  - var pageTitle= "";
+  - var pageTitle= "CSS Talk";
   - var pageDescription= site.description;
   - var pageKeywords= site.keywords;
   //- Optional
@@ -20,15 +20,16 @@ block content
         //- ヘッダ
         header.home-Hero
           h1.home-Hero_Logo
-            img(src="/assets/img/home/main-logo.svg")
+            img(src="/assets/img/home/main-logo.svg" alt="CSS Talk")
 
         //- About
         section.home-About
-          header.home-About_Baloon
-            h2.home-About_Heading.sw-Heading About
-            p.home-About_Lead CSS Talkとは？
+          .home-About_Balloon.home-Animate_bg.home-Heading
+            h2.home-About_Heading About
+            p.home-About_Description CSS Talkとは？
 
-          h3 「CSS Talk」はCSSをテーマに話をする勉強会です。
+          p.homme-About_Lead
+            |「CSS Talk」はCSSをテーマに話をする勉強会です。
           p
             |CSSはWebサイト（またはWebサービス）を制作するうえで欠かせないものです。<br>そしてエンジニアはもとより、デザイナーやディレクターも良いものを<br>作るためには知っておきたいことでもあります。
           p
@@ -42,7 +43,7 @@ block content
                 polygon(points="0,0 1,0 1,.95 .53,.95 .5,1, .47,.95 0,.95")
 
         //- 次回予告
-        section.home-Next
+        section.home-Next.home-Animate_bg.home-Heading
           - var nextTalkDate = "2017.04.22sat"
           .home-Next_Body
             h2.sw-Heading Next Talk
@@ -59,20 +60,20 @@ block content
               span.home-Next_volumeNumber 3
 
         //- レポートページ
-        section.home-Report
+        section.home-Report.home-Animate_bg.home-Heading
           .home-Report_Body
             h2.sw-Heading Report
             p 過去に行われた CSS Talk の開催レポート
             btn.sw-Button.home-Report_Button(disabled=disabled) Coming Soon
           .home-Report_EyeCatch
-            img(src="//placehold.it/100x100")
+            img(src="//placehold.it/200x100")
 
     footer
       //- 登壇者募集
       section.home-Wanted
         h2 登壇者募集中です
         p テキストテキスト
-        a.sw-Button.home-Wanted_Button 登壇を申し込む
+        a.sw-Button.home-Wanted_Button.home-Animate_bg 登壇を申し込む
 
       //- アクセス
       section.home-Access

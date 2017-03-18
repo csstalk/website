@@ -1,18 +1,7 @@
-.home-About_Baloon {
-  color: #fff;
+.home-About_Balloon {
   width: 530px;
   height: 279px;
-  clip-path: url(#home-About_Clip);
   margin: -200px auto 0;
-  background: linear-gradient(to left bottom, #A3D163, #45B27B);
-}
-.home-About_Heading {
-}
-.home-About_Lead {
-}
-
-.home-About_Clips {
-  position: absolute;
-  width: 0;
-  height: 0;
+  background: linear-gradient(to right top, hsla(0,80%,80%,0), hsla(100,80%,80%,.9));
+  clip-path: url(#home-About_Clip);
 }

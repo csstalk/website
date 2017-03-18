@@ -1,8 +1,26 @@
 .home-Next {
   display: flex;
-  background-color: #43B27A;
 }
 
 .home-Next > * {
   flex: 1;
+}
+
+.home-Next_EyeCatch {
+  background: url(//placehold.it/100x100) no-repeat;
+  background-color: inherit;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+
+.home-Next_EyeCatch:after {
+  position: absolute;
+  content: '';
+  width: 10px;
+  height: 10px;
+  background-color: inherit;
+  left: -5px;
+  top: calc(50% - 5px);
+  transform: rotate(45deg);
 }
