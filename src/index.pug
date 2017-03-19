@@ -1,13 +1,12 @@
 extend /_includes/_layout
 append variables
   //- Required
-  - var pageTitle= "CSS Talk";
+  - var pageTitle= "";
   - var pageDescription= site.description;
   - var pageKeywords= site.keywords;
   //- 次回開催日
-  - var nextDate = "2017-04-22 15:30";
-  - var nextDateEn = moment(nextDate);
-  - var nextDateJp = moment(nextDate).locale('ja');
+  - var nextDate = moment(site.nextTalk.date);
+  - var nextDateJp = moment(site.nextTalk.date).locale('ja');
   //- Optional
   - var pageOgpTitle= pageTitle;
   - var pageOgpImage= site.ogpImage
@@ -17,7 +16,7 @@ append variables
   - var pageUrl= relativePath;
 
 block content
-  .st-Wrapper
+  .st-Wrapper.home
     main
       article
 
@@ -27,82 +26,123 @@ block content
             img(src="/assets/img/home/main-logo.svg" alt="CSS Talk")
 
         //- About
-        section.home-About
-          .home-About_Balloon.home-Animate_bg.home-Heading
-            h2.home-About_Heading About
-            p.home-About_Description CSS Talkとは？
+        section.home-About.home-Animate_Text
+          .home-About_Balloon.home-Animate_Bg
+            h2.home-About_Heading.sw-Heading
+              |About
+            p.home-About_Description
+              |CSS Talkとは？
+
+            svg.home-About_Clips
+              defs
+                clippath#home-About_Clip(clipPathUnits="objectBoundingBox")
+                  polygon(
+                  points="0,0 1,0 1,.934 .997,.943 .994,.948 .991,.95 .523,.95 .5,1, .477,.95 .009,.95 .006,.948 .003,.943 0,.934")
 
           p.homme-About_Lead
-            |「CSS Talk」はCSSをテーマに話をする勉強会です。
-          p
-            |CSSはWebサイト（またはWebサービス）を制作するうえで欠かせないものです。<br>そしてエンジニアはもとより、デザイナーやディレクターも良いものを<br>作るためには知っておきたいことでもあります。
-          p
-            |エンジニア同士で知識を深めるも、デザイナーとディレクターを交えて<br>情報や考えを共有をするのもいいでしょう。<br>CSS Talkは職種を問わず、どなたでもご参加いただけます。
-          p
-            |時間に余裕をもたせた、緩やかな勉強会ですので、<br>お気軽にご参加ください。
+            |「CSS Talk」はCSSを
+            br.sw-SpBreak
+            |テーマに話をする勉強会です。
 
-          svg.home-About_Clips
-            defs
-              clippath#home-About_Clip(clipPathUnits="objectBoundingBox")
-                polygon(points="0,0 1,0 1,.95 .53,.95 .5,1, .47,.95 0,.95")
+          .home-About_Text
+            p
+              |CSSはWebサイト（またはWebサービス）を
+              br.sw-SpBreak
+              |制作するうえで欠かせないものです。
+              br
+              |そしてエンジニアはもとより、
+              br.sw-SpBreak
+              |デザイナーやディレクターも良いものを
+              br
+              |作るためには知っておきたいことでもあります。
+            p
+              |エンジニア同士で知識を深めるも、
+              br.sw-SpBreak
+              |デザイナーとディレクターを交えて
+              br
+              |情報や考えを共有をするのもいいでしょう。
+              br
+              |CSS Talkは職種を問わず、
+              br.sw-SpBreak
+              |どなたでもご参加いただけます。
+            p
+              |時間に余裕をもたせた、
+              br.sw-SpBreak
+              |緩やかな勉強会ですので、
+              br
+              |お気軽にご参加ください。
 
         //- 次回予告
-        section.home-Next.home-Animate_bg.home-Heading
+        section.home-Next.home-Animate_Bg.home-Heading
           .home-Next_Body
-            h2.sw-Heading Next Talk
+            h2.sw-Heading
+              |Next Talk
             h3
               time(
-                datetime=nextDateJp.format('Y-MM-DD')
+                datetime=nextDate.format('Y-MM-DD')
                 aria-label=nextDateJp.format('Y年M月D日ddd曜日')
-              ) #{nextDateEn.format('Y.MM.DDddd')}
-            p 次回の開催は #{nextDateJp.format('Y年M月D日(ddd)')}を予定しています
-            p 会場 : TAMコワーキング大阪 大阪市北区末広町3-7
-            a.sw-Button.home-Next_Button 勉強会の詳細はこちら
+              ) #{nextDate.format('Y.MM.DDddd')}
+            p
+              |次回の開催は #{nextDateJp.format('Y年M月D日(ddd)')}を予定しています
+            p
+              |会場: TAMコワーキング大阪 大阪市北区末広町3-7
+            a.sw-Button.sw-Button_alt.home-Animate_Text(href="/")
+              |勉強会の詳細はこちら
 
-          .home-Next_EyeCatch
+          .home-Next_EyeCatch.home-Animate_Text
             h2 CSS Talk
             time(
-              datetime=nextDateJp.format('Y-MM-DD')
+              datetime=nextDate.format('Y-MM-DD')
               aria-label=nextDateJp.format('Y年M月D日ddd曜日')
-            ) #{nextDateEn.format('Y.MM.DDddd')}
+            ) #{nextDate.format('Y.MM.DDddd')}
             .home-Next_volume vol.
-              span.home-Next_volumeNumber 3
+              span.home-Next_volumeNumber #{site.nextTalk.volume}
 
         //- レポートページ
-        section.home-Report.home-Animate_bg.home-Heading
+        section.home-Report.home-Animate_Bg.home-Heading
           .home-Report_Body
-            h2.sw-Heading Report
-            p 過去に行われた CSS Talk の開催レポート
-            btn.sw-Button.home-Report_Button(disabled=disabled) Coming Soon
-          .home-Report_EyeCatch
+            h2.sw-Heading
+              |Report
+            p
+              |過去に行われた CSS Talk の開催レポート
+            button.sw-Button.sw-Button_alt(disabled)
+              |Coming Soon
+          .home-Report_EyeCatch.home-Animate_Text
             img(src="//placehold.it/200x100")
 
     footer
       //- 登壇者募集
-      section.home-Wanted
-        h2 登壇者募集中です
-        p テキストテキスト
-        a.sw-Button.home-Wanted_Button.home-Animate_bg 登壇を申し込む
+      section.home-Wanted.home-Animate_Text
+        h2.sw-Heading
+         |登壇者募集中です
+        p
+          |CSS Talkでは登壇者を随時募集しています。<br>
+          |登壇希望のかたはslackに招待しますので、以下のリンクから<br>
+          |1. 名前 2. メールアドレス 3. CSS Talkに登壇希望<br>
+          |を明記のうえ送信してください。
+        a.sw-Button.home-Wanted_Button.home-Animate_Bg(href="https://taminc.doorkeeper.jp/contact/new")
+         |登壇を申し込む
 
       //- アクセス
-      section.home-Access
-        h2.sw-Heading Access
+      section.home-Access.home-Animate_Text
+        h2.sw-Heading
+          |Access
         p 会場 : TAMコワーキング大阪
         p 大阪市北区末広町3-7
         img(src="//placehold.it/100x100")
         small
-          a(href="#")
+          a(href="#") View on Google Maps
 
       aside.home-BannerArea
         .home-Banner_Item
           a(href="#")
-            img(src="")
+            img(src="//placehold.it/190x80")
         .home-Banner_Item
           a(href="#")
-            img(src="")
+            img(src="//placehold.it/190x80")
         .home-Banner_Item
           a(href="#")
-            img(src="")
+            img(src="//placehold.it/190x80")
 
 
     // グローバルフッター

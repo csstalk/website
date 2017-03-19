@@ -1,7 +1,67 @@
+.home-About {
+  text-align: center;
+  margin-bottom: 180px;
+}
+
 .home-About_Balloon {
   width: 530px;
-  height: 279px;
-  margin: -200px auto 0;
+  height: 276px;
+  max-width: 82%;
+  max-height: 33vw;
+  margin: 0 auto;
+
   background: linear-gradient(to right top, hsla(0,80%,80%,0), hsla(100,80%,80%,.9));
   clip-path: url(#home-About_Clip);
+  border-radius: 8px;
+  color: #fff;
+  line-height: 1;
+}
+
+.home-About_Heading {
+  font-weight: 600;
+  font-size: 60px;
+  padding-top: 90px;
+  margin-bottom: 15px;
+
+  @media (--md-down) {
+    font-size: 9vw;
+    padding-top: 7.6vw;
+  }
+}
+
+.home-About_Description {
+  font-size: 25px;
+  @media (--md-down) {
+    font-size: 3.7vw;
+  }
+}
+
+.homme-About_Lead {
+  font-weight: 200;
+  font-size: 39px;
+  letter-spacing: .4px;
+  line-height: 1.5;
+  margin: 73px 0 48px;
+
+  @media (--md-down) {
+    font-size: 6.2vw;
+    letter-spacing: 1px;
+    margin: 6.2vw 0 5vw;
+  }
+}
+
+.home-About_Text {
+  & > p {
+    font-size: 18px;
+    line-height: 2.1;
+    margin-bottom: 40px;
+    letter-spacing: 0.4px;
+
+    @media (--md-down) {
+      font-size: 3.9vw;
+      line-height: 2;
+      margin-bottom: 1.8em;
+      letter-spacing: 1px;
+    }
+  }
 }

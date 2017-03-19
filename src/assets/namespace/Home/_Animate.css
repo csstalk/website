@@ -1,20 +1,46 @@
-.home-Animate_bg {
-  background-color: var(--home--animated-background-color);
-  animation: home-Animate_bg 60s linear infinite;
+/*
+ * 文字色のアニメーション
+ */
+.home-Animate_Text {
+  color: var(--color--primaly);
+  animation: home-Animate_Text 60s linear infinite;
+}
+
+@keyframes home-Animate_Text {
+  0% {
+    color: var(--color--primaly);
+  }
+  33% {
+    color: #f93;
+  }
+  66% {
+    color: #39f;
+  }
+  100% {
+    color: var(--color--primaly);
+  }
 }
 
 
-@keyframes home-Animate_bg {
+/*
+ * 背景色のアニメーション
+ */
+.home-Animate_Bg {
+  background-color: var(--color--primaly);
+  animation: home-Animate_Bg 60s linear infinite;
+}
+
+@keyframes home-Animate_Bg {
   0% {
-    background-color: var(--home--animated-background-color);
+    background-color: var(--color--primaly);
   }
   33% {
-    background-color: #ff0;
+    background-color: #f93;
   }
   66% {
-    background-color: #0ff;
+    background-color: #39f;
   }
   100% {
-    background-color: var(--home--animated-background-color);
+    background-color: var(--color--primaly);
   }
 }

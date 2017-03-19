@@ -1,4 +1,9 @@
 :root {
+  --color--primaly: #3db377;
+  --font--jp: 'Noto Sans Japanese', sans-serif;
+  --font--en: 'Nunito', 'Noto Sans Japanese', sans-serif;
+
+
   --max-width: 1080px;
   --color: #000;
   --color--link: #2b70ba;
@@ -17,6 +22,4 @@
   --form--disabled-cursor: not-allowed;
   --form--disabled-opacity: 0.5;
   --form--disabled-background-color: #ddd;
-
-  --home--animated-background-color: #45b27b;
 }

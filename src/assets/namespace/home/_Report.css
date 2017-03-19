@@ -25,10 +25,8 @@
 .home-Report_EyeCatch:after {
   position: absolute;
   content: '';
-  width: 10px;
-  height: 10px;
-  background-color: inherit;
-  right: -5px;
-  top: calc(50% - 5px);
-  transform: rotate(45deg);
+  border: 12px solid transparent;
+  border-right: 14px solid currentColor;
+  right: 0;
+  top: calc(50% - 12px);
 }

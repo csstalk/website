@@ -17,10 +17,8 @@
 .home-Next_EyeCatch:after {
   position: absolute;
   content: '';
-  width: 10px;
-  height: 10px;
-  background-color: inherit;
-  left: -5px;
-  top: calc(50% - 5px);
-  transform: rotate(45deg);
+  border: 12px solid transparent;
+  border-left: 14px solid currentColor;
+  left: 0;
+  top: calc(50% - 12px);
 }

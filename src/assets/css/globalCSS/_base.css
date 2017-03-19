@@ -19,22 +19,8 @@ html {
   }
 }
 
-/* 日本語 */
-html[lang^="ja"] {
-  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
-  /*font-family: "Noto Sans Japanese", sans-serif;*/
-}
-
-/* 英語 */
-html[lang^="en"] {
-  font-family: "Helvetica Neue", Helvetica, sans-serif;
-  /*font-family: "Noto Sans", sans-serif;*/
-}
-
-/* 中国語(簡体字) */
-html[lang="zh-cn"] {
-  font-family: "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", sans-serif;
-  /*font-family: "Noto Sans SC", sans-serif;*/
+html {
+  font-family: var(--font--jp);
 }
 
 body {
