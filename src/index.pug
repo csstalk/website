@@ -26,8 +26,8 @@ block content
             img(src="/assets/img/home/main-logo.svg" alt="CSS Talk")
 
         //- About
-        section.home-About.home-Animate_Text
-          .home-About_Balloon.home-Animate_Bg
+        section.home-About.home-AnimateText
+          .home-About_Balloon.home-AnimateBg
             h2.home-About_Heading.sw-Heading
               |About
             p.home-About_Description
@@ -73,7 +73,7 @@ block content
               |お気軽にご参加ください。
 
         //- 次回予告
-        section.home-Next.home-Animate_Bg.home-Heading
+        section.home-Next.home-AnimateBg.home-Heading
           .home-Next_Body
             h2.sw-Heading
               |Next Talk
@@ -86,10 +86,10 @@ block content
               |次回の開催は #{nextDateJp.format('Y年M月D日(ddd)')}を予定しています
             p
               |会場: TAMコワーキング大阪 大阪市北区末広町3-7
-            a.sw-Button.sw-Button_alt.home-Animate_Text(href="/")
+            a.sw-Button.sw-Button_alt.home-AnimateText(href="/")
               |勉強会の詳細はこちら
 
-          .home-Next_EyeCatch.home-Animate_Text
+          .home-Next_EyeCatch.home-AnimateText
             h2 CSS Talk
             time(
               datetime=nextDate.format('Y-MM-DD')
@@ -99,7 +99,7 @@ block content
               span.home-Next_volumeNumber #{site.nextTalk.volume}
 
         //- レポートページ
-        section.home-Report.home-Animate_Bg.home-Heading
+        section.home-Report.home-AnimateBg.home-Heading
           .home-Report_Body
             h2.sw-Heading
               |Report
@@ -107,12 +107,12 @@ block content
               |過去に行われた CSS Talk の開催レポート
             button.sw-Button.sw-Button_alt(disabled)
               |Coming Soon
-          .home-Report_EyeCatch.home-Animate_Text
+          .home-Report_EyeCatch.home-AnimateText
             img(src="//placehold.it/200x100")
 
     footer
       //- 登壇者募集
-      section.home-Wanted.home-Animate_Text
+      section.home-Wanted.home-AnimateText
         h2.sw-Heading
          |登壇者募集中です
         p
@@ -120,11 +120,11 @@ block content
           |登壇希望のかたはslackに招待しますので、以下のリンクから<br>
           |1. 名前 2. メールアドレス 3. CSS Talkに登壇希望<br>
           |を明記のうえ送信してください。
-        a.sw-Button.home-Wanted_Button.home-Animate_Bg(href="https://taminc.doorkeeper.jp/contact/new")
+        a.sw-Button.home-Wanted_Button.home-AnimateBg(href="https://taminc.doorkeeper.jp/contact/new")
          |登壇を申し込む
 
       //- アクセス
-      section.home-Access.home-Animate_Text
+      section.home-Access.home-AnimateText
         h2.sw-Heading
           |Access
         p 会場 : TAMコワーキング大阪

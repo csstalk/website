@@ -1,12 +1,12 @@
 /*
  * 文字色のアニメーション
  */
-.home-Animate_Text {
+.home-AnimateText {
   color: var(--color--primaly);
-  animation: home-Animate_Text 60s linear infinite;
+  animation: home-AnimateText 60s linear infinite;
 }
 
-@keyframes home-Animate_Text {
+@keyframes home-AnimateText {
   0% {
     color: var(--color--primaly);
   }
@@ -25,12 +25,12 @@
 /*
  * 背景色のアニメーション
  */
-.home-Animate_Bg {
+.home-AnimateBg {
   background-color: var(--color--primaly);
-  animation: home-Animate_Bg 60s linear infinite;
+  animation: home-AnimateBg 60s linear infinite;
 }
 
-@keyframes home-Animate_Bg {
+@keyframes home-AnimateBg {
   0% {
     background-color: var(--color--primaly);
   }
