@@ -3,7 +3,7 @@
   margin-bottom: 180px;
 }
 
-.home-About_Balloon {
+.home-About_Title {
   width: 530px;
   height: 276px;
   max-width: 82%;
@@ -11,7 +11,7 @@
   margin: 0 auto;
 
   background: linear-gradient(to right top, hsla(0,80%,80%,0), hsla(100,80%,80%,.9));
-  clip-path: url(#home-About_Clip);
+  clip-path: url(#home-About_TitleClip);
   border-radius: 8px;
   color: #fff;
   line-height: 1;
