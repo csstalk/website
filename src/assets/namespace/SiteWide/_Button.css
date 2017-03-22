@@ -22,6 +22,7 @@ button.sw-Button.sw-Button_alt(href="#" disabled) disabled
 */
 .sw-Button {
   display: inline-block;
+  position: relative;
   width: 440px;
   height: 60px;
   max-width: 90%;

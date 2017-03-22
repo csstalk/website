@@ -1,6 +1,41 @@
 .home-About {
   text-align: center;
-  margin-bottom: 180px;
+  padding-bottom: 180px;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 22%;
+    max-width: 392px;
+    height: 498px;
+    background: url(/assets/img/home/about-bg-1.png) no-repeat right bottom;
+    background-size: cover;
+
+    @media (--lg-down) {
+      width: 28%;
+      background-size: contain;
+    }
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 30%;
+    max-width: 534px;
+    height: 746px;
+    background: url(/assets/img/home/about-bg-2.png) no-repeat left bottom;
+    background-size: cover;
+
+    @media (--lg-down) {
+      width: 40%;
+      background-size: contain;
+    }
+  }
 }
 
 .home-About_Balloon {
