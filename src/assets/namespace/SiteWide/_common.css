@@ -12,9 +12,9 @@
  * レスポンシブ用改行
  */
 .sw-SpBreak {
-  display: none;
-  @media (--lg-down) {
-    display: block;
+  display: block;
+  @media (--lg-up) {
+    display: none;
   }
 }
 
@@ -23,11 +23,11 @@
  * デザインチェック(デバッグ)用
  */
 .home-DesignView {
-  background: url(http://e-tam.net/~uenaka/test/css_talk/0111/css_talk.jpg) no-repeat center top;
+  background-size: 100% auto;
+  background-image: url(http://e-tam.net/~uenaka/test/css_talk/0111/sp.jpg);
 
-  @media (--sm-down) {
-    background-image: url(http://e-tam.net/~uenaka/test/css_talk/0111/sp.jpg);
-    background-size: 100% auto;
+  @media (--sm-up) {
+    background: url(http://e-tam.net/~uenaka/test/css_talk/0111/css_talk.jpg) no-repeat center top;
   }
 
   & .st-Wrapper {

@@ -38,7 +38,7 @@
   }
 }
 
-.home-About_Balloon {
+.home-About_Title {
   width: 530px;
   height: 276px;
   max-width: 82%;
@@ -46,7 +46,7 @@
   margin: 0 auto;
 
   background: linear-gradient(to right top, hsla(0,80%,80%,0), hsla(100,80%,80%,.9));
-  clip-path: url(#home-About_Clip);
+  clip-path: url(#home-About_TitleClip);
   border-radius: 8px;
   color: #fff;
   line-height: 1;
@@ -54,49 +54,51 @@
 
 .home-About_Heading {
   font-weight: 600;
-  font-size: 60px;
-  padding-top: 90px;
   margin-bottom: 15px;
+  font-size: 9vw;
+  padding-top: 7.6vw;
 
-  @media (--md-down) {
-    font-size: 9vw;
-    padding-top: 7.6vw;
+  @media (--md-up) {
+    font-size: 60px;
+    padding-top: 90px;
   }
 }
 
 .home-About_Description {
-  font-size: 25px;
-  @media (--md-down) {
-    font-size: 3.7vw;
+  font-size: 3.7vw;
+  @media (--md-up) {
+    font-size: 25px;
   }
 }
 
 .homme-About_Lead {
+  font-size: 6.2vw;
   font-weight: 200;
-  font-size: 39px;
-  letter-spacing: .4px;
   line-height: 1.5;
-  margin: 73px 0 48px;
+  letter-spacing: 1px;
+  margin: 6.2vw 0 5vw;
 
-  @media (--md-down) {
-    font-size: 6.2vw;
-    letter-spacing: 1px;
-    margin: 6.2vw 0 5vw;
+  @media (--md-up) {
+    font-size: 39px;
+    letter-spacing: .4px;
+    margin: 73px 0 48px;
   }
 }
 
 .home-About_Text {
-  & > p {
+  font-size: 3.9vw;
+  line-height: 2;
+  margin-bottom: 1.8em;
+  letter-spacing: 1px;
+
+  @media (--md-up) {
     font-size: 18px;
     line-height: 2.1;
     margin-bottom: 40px;
-    letter-spacing: 0.4px;
+    letter-spacing: .4px;
+  }
 
-    @media (--md-down) {
-      font-size: 3.9vw;
-      line-height: 2;
-      margin-bottom: 1.8em;
-      letter-spacing: 1px;
-    }
+  &:last-child {
+    margin-bottom: 0;
   }
 }

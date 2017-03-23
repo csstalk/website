@@ -6,12 +6,12 @@
   background: url(/assets/img/home/home-Hero.png) center top;
   background-size: cover;
   width: 100%;
-  height: calc(800px + 8.75vw);
-  margin-bottom: calc(-120px - 8.75vw);
+  height: 130vw;
+  margin-bottom: -23vw;
 
-  @media (--sm-down) {
-    height: 130vw;
-    margin-bottom: -23vw;
+  @media (--sm-up) {
+    height: calc(800px + 8.75vw);
+    margin-bottom: calc(-120px - 8.75vw);
   }
 }
 

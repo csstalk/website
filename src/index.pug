@@ -26,8 +26,8 @@ block content
             img(src="/assets/img/home/main-logo.svg" alt="CSS Talk")
 
         //- About
-        section.home-About.home-Animate_Text
-          .home-About_Balloon.home-Animate_Bg
+        section.home-About.home-AnimateText
+          .home-About_Title.home-AnimateBg
             h2.home-About_Heading.sw-Heading
               |About
             p.home-About_Description
@@ -35,7 +35,7 @@ block content
 
             svg.home-About_Clips
               defs
-                clippath#home-About_Clip(clipPathUnits="objectBoundingBox")
+                clippath#home-About_TitleClip(clipPathUnits="objectBoundingBox")
                   polygon(
                   points="0,0 1,0 1,.934 .997,.943 .994,.948 .991,.95 .523,.95 .5,1, .477,.95 .009,.95 .006,.948 .003,.943 0,.934")
 
@@ -44,41 +44,40 @@ block content
             br.sw-SpBreak
             |テーマに話をする勉強会です。
 
-          .home-About_Text
-            p
-              |CSSはWebサイト（またはWebサービス）を
-              br.sw-SpBreak
-              |制作するうえで欠かせないものです。
-              br
-              |そしてエンジニアはもとより、
-              br.sw-SpBreak
-              |デザイナーやディレクターも良いものを
-              br
-              |作るためには知っておきたいことでもあります。
-            p
-              |エンジニア同士で知識を深めるも、
-              br.sw-SpBreak
-              |デザイナーとディレクターを交えて
-              br
-              |情報や考えを共有をするのもいいでしょう。
-              br
-              |CSS Talkは職種を問わず、
-              br.sw-SpBreak
-              |どなたでもご参加いただけます。
-            p
-              |時間に余裕をもたせた、
-              br.sw-SpBreak
-              |緩やかな勉強会ですので、
-              br
-              |お気軽にご参加ください。
+
+          p.home-About_Text
+            |CSSはWebサイト（またはWebサービス）を
+            br.sw-SpBreak
+            |制作するうえで欠かせないものです。
+            br
+            |そしてエンジニアはもとより、
+            br.sw-SpBreak
+            |デザイナーやディレクターも良いものを
+            br
+            |作るためには知っておきたいことでもあります。
+          p.home-About_Text
+            |エンジニア同士で知識を深めるも、
+            br.sw-SpBreak
+            |デザイナーとディレクターを交えて
+            br
+            |情報や考えを共有をするのもいいでしょう。
+            br
+            |CSS Talkは職種を問わず、
+            br.sw-SpBreak
+            |どなたでもご参加いただけます。
+          p.home-About_Text
+            |時間に余裕をもたせた、
+            br.sw-SpBreak
+            |緩やかな勉強会ですので、
+            br
+            |お気軽にご参加ください。
 
         //- 次回予告
-        section.home-Next.home-Animate_Bg.home-Heading
+        section.home-Next.home-AnimateBg.home-Heading
           .home-Next_Body
-            h2.sw-Heading
-              |Next Talk
-            h3
-              time(
+            h2
+              .sw-Heading Next Talk
+              time.home-Next_Date(
                 datetime=nextDate.format('Y-MM-DD')
                 aria-label=nextDateJp.format('Y年M月D日ddd曜日')
               ) #{nextDate.format('Y.MM.DDddd')}
@@ -86,10 +85,10 @@ block content
               |次回の開催は #{nextDateJp.format('Y年M月D日(ddd)')}を予定しています
             p
               |会場: TAMコワーキング大阪 大阪市北区末広町3-7
-            a.sw-Button.sw-Button_alt.home-Animate_Text(href="/")
+            a.sw-Button.sw-Button-alt.home-AnimateText(href="/")
               |勉強会の詳細はこちら
 
-          .home-Next_EyeCatch.home-Animate_Text
+          .home-Next_EyeCatch.home-AnimateText
             h2 CSS Talk
             time(
               datetime=nextDate.format('Y-MM-DD')
@@ -99,20 +98,20 @@ block content
               span.home-Next_volumeNumber #{site.nextTalk.volume}
 
         //- レポートページ
-        section.home-Report.home-Animate_Bg.home-Heading
+        section.home-Report.home-AnimateBg.home-Heading
           .home-Report_Body
             h2.sw-Heading
               |Report
             p
               |過去に行われた CSS Talk の開催レポート
-            button.sw-Button.sw-Button_alt(disabled)
+            button.sw-Button.sw-Button-alt(disabled)
               |Coming Soon
-          .home-Report_EyeCatch.home-Animate_Text
+          .home-Report_EyeCatch.home-AnimateText
             img(src="//placehold.it/200x100")
 
     footer.home-Mic
       //- 登壇者募集
-      section.home-Wanted.home-Animate_Text
+      section.home-Wanted.home-AnimateText
         h2.sw-Heading
          |登壇者募集中です
         p
@@ -120,11 +119,11 @@ block content
           |登壇希望のかたはslackに招待しますので、以下のリンクから<br>
           |1. 名前 2. メールアドレス 3. CSS Talkに登壇希望<br>
           |を明記のうえ送信してください。
-        a.sw-Button.home-Wanted_Button.home-Animate_Bg(href="https://taminc.doorkeeper.jp/contact/new")
+        a.sw-Button.home-Wanted_Button.home-AnimateBg(href="https://taminc.doorkeeper.jp/contact/new")
          |登壇を申し込む
 
       //- アクセス
-      section.home-Access.home-Animate_Text
+      section.home-Access.home-AnimateText
         h2.sw-Heading
           |Access
         p 会場 : TAMコワーキング大阪
