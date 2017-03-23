@@ -57,7 +57,10 @@ button.sw-Button.sw-Button_alt(href="#" disabled) disabled
   }
 }
 
-.sw-Button_alt {
+/*
+ * 色違いのボタン (背景・文字色反転)
+ */
+.sw-Button-alt {
   color: var(--color--primaly);
   background-color: #fff;
 }
