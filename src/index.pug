@@ -75,10 +75,9 @@ block content
         //- 次回予告
         section.home-Next.home-AnimateBg.home-Heading
           .home-Next_Body
-            h2.sw-Heading
-              |Next Talk
-            h3
-              time(
+            h2
+              .sw-Heading Next Talk
+              time.home-Next_Date(
                 datetime=nextDate.format('Y-MM-DD')
                 aria-label=nextDateJp.format('Y年M月D日ddd曜日')
               ) #{nextDate.format('Y.MM.DDddd')}
