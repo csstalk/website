@@ -60,7 +60,10 @@
     font-size: 18px;
     line-height: 2.1;
     margin-bottom: 40px;
-    letter-spacing: 0.4px;
+    letter-spacing: .4px;
+  }
 
+  &:last-child {
+    margin-bottom: 0;
   }
 }
