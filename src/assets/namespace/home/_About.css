@@ -1,7 +1,10 @@
 .home-About {
   text-align: center;
   position: relative;
-  padding-bottom: 180px;
+  padding-bottom: 140px;
+  @media (--sm-up) {
+    padding-bottom: 180px;
+  }
 
   &:before {
     content: '';

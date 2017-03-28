@@ -24,17 +24,14 @@
   left: 0;
   width: 100%;
   height: 1114px;
-
-  overflow: hidden;
-
-  background: url('/assets/img/home/mic1.png') no-repeat center top;
+  overflow-x: hidden;
 
   /* 全体がちょっと上にあがるアニメーション */
   transition: all .6s ease;
   transform: translateY(-30px);
   opacity: 0;
   &.home-Mic_Animate {
-    transform: translateY(-71px);
+    transform: translateY(-82px);
     opacity: 1;
   }
 }
@@ -43,10 +40,10 @@
 .home-MicCode1 {
   position: absolute;
   top: 0;
-  right: calc(50% - 980px);
-  width: 620px;
+  right: calc(50% - 780px);
+  width: 710px;
   height: 1114px;
-  background: url('/assets/img/home/mic2.png') no-repeat right top;
+  background: url('/assets/img/home/mic1.png') no-repeat right top;
 
   transition: all .5s ease;
   @nest .home-Mic_Animate & {
@@ -58,10 +55,10 @@
 .home-MicCode2 {
   position: absolute;
   top: 0;
-  left: calc(50% - 980px);
+  left: calc(50% - 1180px);
   width: 0;
   height: 1114px;
-  background: url('/assets/img/home/mic3.png') no-repeat left top;
+  background: url('/assets/img/home/mic2.png') no-repeat left top;
   opacity: 0;
 
   transition: all .6s ease .6s;

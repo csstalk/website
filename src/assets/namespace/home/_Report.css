@@ -1,6 +1,5 @@
 .home-Report {
   display: flex;
-  flex-wrap:wrap;
   text-align: center;
   align-items: center;
 
@@ -10,11 +9,11 @@
   }
 
   & > * {
-    flex: 1;
     width: 100%;
-    min-height: calc(100vw * 500 / 650);
+    min-height: 290px;
+
     @media (--sm-up) {
-      min-height: 30vw;
+      max-width: 50%;
     }
   }
 }
@@ -22,16 +21,30 @@
 .home-Report_Body {
   color: var(--background-color);
   font-size: .95rem;
+  padding-top: 30px;
+
+  @media (--sm-up) {
+    padding-top: 0;
+  }
+  @media (--lg-up) {
+    font-size: 1.1vw;
+  }
 }
 
 .home-Report_Body .sw-Heading {
   font-size: 2.7rem;
+  padding-top: 30px;
+
+  @media (--lg-up) {
+    font-size: 3.8vw;
+  }
 }
 
 .home-Report_EyeCatch {
   position: relative;
   overflow: hidden;
   background-color: inherit;
+  height: 37.5vw;
 }
 
 .home-Report_EyeCatch img {
