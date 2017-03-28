@@ -13,12 +13,14 @@
   left: 0;
   width: 100%;
   height: 1114px;
+
   overflow: hidden;
 
   background: url('/assets/img/home/mic1.png') no-repeat center top;
 
   /* 全体がちょっと上にあがるアニメーション */
   transition: all .4s ease;
+  transform: translateY(-30px);
   opacity: 0;
   &.home-Mic_Animate {
     transform: translateY(-50px);
@@ -35,7 +37,7 @@
   height: 1114px;
   background: url('/assets/img/home/mic2.png') no-repeat right top;
 
-  transition: all .4s ease;
+  transition: all .5s ease;
   @nest .home-Mic_Animate & {
     width: 1960px;
   }
@@ -50,7 +52,7 @@
   height: 1114px;
   background: url('/assets/img/home/mic3.png') no-repeat left top;
 
-  transition: all .5s ease .4s;
+  transition: all .6s ease .6s;
   @nest .home-Mic_Animate & {
     width: 1960px;
   }

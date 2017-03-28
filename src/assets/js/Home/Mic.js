@@ -2,7 +2,7 @@
 
 export default () => {
 
-  const mic_offset_top = $('.home-Mic').offset().top + 300;
+  const mic_offset_top = $('.home-Mic').offset().top + 400;
 
   $(window).on({
     'scroll': () => {
