@@ -28,10 +28,10 @@
 
   /* 全体がちょっと上にあがるアニメーション */
   transition: all .6s ease;
-  transform: translateY(-30px);
+  transform: translateY(-10px);
   opacity: 0;
   &.home-Mic_Animate {
-    transform: translateY(-82px);
+    transform: translateY(-47px);
     opacity: 1;
   }
 }
