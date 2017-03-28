@@ -22,32 +22,57 @@ button.sw-Button.sw-Button_alt(href="#" disabled) disabled
 */
 .sw-Button {
   display: inline-block;
+  position: relative;
   width: 440px;
-  height: 60px;
-  max-width: 90%;
-
-  margin: 30px 0;
+  max-width: 95%;
   padding: 0;
+
+  margin: 20px 0;
+  height: 55px;
+  line-height: 55px;
+  border-radius: calc(55px / 2);
+
+  @media (--sm-up) {
+    margin: 30px 0;
+    height: 60px;
+    line-height: 60px;
+    border-radius: calc(60px / 2);
+  }
 
   color: #fff;
   background-color: var(--color--primaly);
   border: 1px solid currentColor;
-  border-radius: 30px;
 
   cursor: pointer;
   text-align: center;
   text-decoration: none;
-  font-size: 115%;
-  line-height: 60px;
+  text-transform: uppercase;
+  font-size: 1.15rem;
   appearance: none;
 
   &:--onEvent {
     text-decoration: none;
   }
 
-  &:hover {
-    /* todo */
+
+  /* ホバー時のアニメーション */
+  transition: all .3s;
+  &:after {
+    position: absolute;
+    content: '●'; /* todo */
+    opacity: 0;
+    right: 2em;
+    color: #fff;
+    transition: all .3s;
   }
+  &:not(:disabled):hover {
+    text-indent: -1em;
+    &:after {
+      opacity: 1;
+      transform: translateX(.5em);
+    }
+  }
+
 
   &:disabled {
     cursor: not-allowed;
@@ -55,12 +80,4 @@ button.sw-Button.sw-Button_alt(href="#" disabled) disabled
     background-color: inherit;
     opacity: .8;
   }
-}
-
-/*
- * 色違いのボタン (背景・文字色反転)
- */
-.sw-Button-alt {
-  color: var(--color--primaly);
-  background-color: #fff;
 }
