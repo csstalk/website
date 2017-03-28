@@ -1,0 +1,46 @@
+/*
+ * 登壇者募集
+ */
+.home-Wanted {
+  margin: 35px 0 20px;
+  text-align: center;
+}
+
+.home-Wanted_Title.home-Wanted_Title {
+  position: relative;
+  display: inline-block;
+  font-weight: 200;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+
+  &:before {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 32px;
+    background-color: currentColor;
+    top: 25px;
+    left: -42px;
+    transform: rotate(64deg);
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 32px;
+    background-color: currentColor;
+    top: 25px;
+    right: -30px;
+    transform: rotate(-64deg);
+  }
+}
+
+.home-Wanted_Text {
+  text-align: left;
+  font-size: .95rem;
+  margin: 0 20px;
+
+  & br {
+    display: none;
+  }
+}

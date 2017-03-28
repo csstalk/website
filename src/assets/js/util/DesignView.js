@@ -8,7 +8,7 @@ export default () => {
   $('body').toggleClass('home-DesignView', false);
 
   $(window).keydown((e) => {
-    if (e.keyCode == 49) {
+    if (e.keyCode === 49) {
       // key "1"
       $('body').toggleClass('home-DesignView');
     }

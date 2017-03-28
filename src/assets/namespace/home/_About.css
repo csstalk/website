@@ -1,6 +1,10 @@
 .home-About {
   text-align: center;
-  margin-bottom: 180px;
+
+  margin-bottom: 140px;
+  @media (--md-up) {
+    margin-bottom: 180px;
+  }
 }
 
 .home-About_Title {
@@ -12,7 +16,7 @@
 
   background: linear-gradient(to right top, hsla(0,80%,80%,0), hsla(100,80%,80%,.9));
   clip-path: url(#home-About_TitleClip);
-  border-radius: 8px;
+  border-radius: 2% 1.5%;
   color: #fff;
   line-height: 1;
 }
@@ -24,7 +28,7 @@
   padding-top: 7.6vw;
 
   @media (--md-up) {
-    font-size: 60px;
+    font-size: 3.75rem;
     padding-top: 90px;
   }
 }
@@ -32,19 +36,18 @@
 .home-About_Description {
   font-size: 3.7vw;
   @media (--md-up) {
-    font-size: 25px;
+    font-size: 1.5rem;
   }
 }
 
 .homme-About_Lead {
   font-size: 6.2vw;
-  font-weight: 200;
   line-height: 1.5;
   letter-spacing: 1px;
   margin: 6.2vw 0 5vw;
 
   @media (--md-up) {
-    font-size: 39px;
+    font-size: 2.5rem;
     letter-spacing: .4px;
     margin: 73px 0 48px;
   }
@@ -52,15 +55,14 @@
 
 .home-About_Text {
   font-size: 3.9vw;
-  line-height: 2;
-  margin-bottom: 1.8em;
   letter-spacing: 1px;
+  line-height: 2.1;
+  margin-bottom: 1.8em;
 
   @media (--md-up) {
-    font-size: 18px;
-    line-height: 2.1;
-    margin-bottom: 40px;
+    font-size: 1.12rem;
     letter-spacing: .4px;
+    margin-bottom: 40px;
   }
 
   &:last-child {

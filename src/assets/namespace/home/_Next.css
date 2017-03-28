@@ -1,24 +1,68 @@
 .home-Next {
+  text-align: center;
+
   display: flex;
+  & > * {
+    flex: 1;
+  }
+
+  @media (--sm-down) {
+    flex-direction: column;
+  }
 }
 
-.home-Next > * {
-  flex: 1;
+.home-Next_Body {
+  color: var(--background-color);
+  padding: 35px 0 25px;
+  font-size: .95rem;
+}
+
+.home-Next_Heading.sw-Heading {
+  font-size: 1.8rem;
+}
+
+.home-Next_DetailButton {
+  color: var(--color--primaly);
+  background-color: #fff;
+}
+
+.home-Next_Date {
+  display: block;
+  text-transform: lowercase;
+  font-size: 2.5rem;
+  font-family: var(--font--en);
+  font-weight: 600;
+  letter-spacing: 2px;
+  line-height: 1;
+  margin-bottom: .3em;
 }
 
 .home-Next_EyeCatch {
-  background: url(//placehold.it/100x100) no-repeat;
+  background: url(/assets/img/home/next-bg.png) no-repeat;
   background-color: inherit;
-  background-size: cover;
+  background-size: 100% 100%;
   position: relative;
   overflow: hidden;
+
+  @media (--sm-down) {
+    width: 100%;
+    min-height: calc(100vw * 500 / 650);
+  }
 }
 
 .home-Next_EyeCatch:after {
   position: absolute;
   content: '';
-  border: 12px solid transparent;
-  border-left: 14px solid currentColor;
-  left: 0;
-  top: calc(50% - 12px);
+
+  top: 0;
+  left: calc(50% - 10px);
+  border: 10px solid transparent;
+  border-top: 10px solid currentColor;
+
+  @media (--sm-up) {
+    top: calc(50% - 12px);
+    left: 0;
+    border: 12px solid transparent;
+    border-left: 14px solid currentColor;
+  }
 }

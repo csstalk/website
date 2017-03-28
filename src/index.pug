@@ -16,7 +16,7 @@ append variables
   - var pageUrl= relativePath;
 
 block content
-  .st-Wrapper.home
+  .st-Wrapper.home.home-AnimateText
     main
       article
 
@@ -26,7 +26,7 @@ block content
             img(src="/assets/img/home/main-logo.svg" alt="CSS Talk")
 
         //- About
-        section.home-About.home-AnimateText
+        section.home-About
           .home-About_Title.home-AnimateBg
             h2.home-About_Heading.sw-Heading
               |About
@@ -46,7 +46,7 @@ block content
 
 
           p.home-About_Text
-            |CSSはWebサイト（またはWebサービス）を
+            |CSSはWebサイト(またはWebサービス)を
             br.sw-SpBreak
             |制作するうえで欠かせないものです。
             br
@@ -76,19 +76,19 @@ block content
         section.home-Next.home-AnimateBg.home-Heading
           .home-Next_Body
             h2
-              .sw-Heading Next Talk
+              .sw-Heading.home-Next_Heading Next Talk
               time.home-Next_Date(
                 datetime=nextDate.format('Y-MM-DD')
                 aria-label=nextDateJp.format('Y年M月D日ddd曜日')
               ) #{nextDate.format('Y.MM.DDddd')}
             p
-              |次回の開催は #{nextDateJp.format('Y年M月D日(ddd)')}を予定しています
+              |次回の開催は #{nextDateJp.format('Y年M月D日(ddd)')}を予定しています。
             p
               |会場: TAMコワーキング大阪 大阪市北区末広町3-7
-            a.sw-Button.sw-Button-alt.home-AnimateText(href="/")
+            a.sw-Button(href="/")
               |勉強会の詳細はこちら
 
-          .home-Next_EyeCatch.home-AnimateText
+          .home-Next_EyeCatch
             h2 CSS Talk
             time(
               datetime=nextDate.format('Y-MM-DD')
@@ -104,17 +104,17 @@ block content
               |Report
             p
               |過去に行われた CSS Talk の開催レポート
-            button.sw-Button.sw-Button-alt(disabled)
+            button.sw-Button(disabled)
               |Coming Soon
-          .home-Report_EyeCatch.home-AnimateText
+          .home-Report_EyeCatch
             img(src="//placehold.it/200x100")
 
     footer
       //- 登壇者募集
-      section.home-Wanted.home-AnimateText
-        h2.sw-Heading
+      section.home-Wanted
+        h2.home-Wanted_Title.sw-Heading
          |登壇者募集中です
-        p
+        p.home-Wanted_Text
           |CSS Talkでは登壇者を随時募集しています。<br>
           |登壇希望のかたはslackに招待しますので、以下のリンクから<br>
           |1. 名前 2. メールアドレス 3. CSS Talkに登壇希望<br>
@@ -123,25 +123,22 @@ block content
          |登壇を申し込む
 
       //- アクセス
-      section.home-Access.home-AnimateText
-        h2.sw-Heading
+      section.home-Access
+        h2.home-Access_Title.sw-Heading
           |Access
         p 会場 : TAMコワーキング大阪
         p 大阪市北区末広町3-7
-        img(src="//placehold.it/100x100")
-        small
+        img.home-Access_Map(src="//placehold.it/450x540")
+        small.home-Access_MapLink
           a(href="#") View on Google Maps
 
       aside.home-BannerArea
-        .home-Banner_Item
-          a(href="#")
-            img(src="//placehold.it/190x80")
-        .home-Banner_Item
-          a(href="#")
-            img(src="//placehold.it/190x80")
-        .home-Banner_Item
-          a(href="#")
-            img(src="//placehold.it/190x80")
+        a.home-BannerArea_Item(href="https://www.tam-tam.co.jp/")
+          img(src="/assets/img/home/bnr01.png")
+        a.home-BannerArea_Item(href="https://a")
+          img(src="/assets/img/home/bnr02.png")
+        a.home-BannerArea_Item(href="https://www.tam-tam.co.jp/tipsnote/")
+          img(src="/assets/img/home/bnr03.png")
 
 
     // グローバルフッター

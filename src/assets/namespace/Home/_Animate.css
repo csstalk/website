@@ -11,10 +11,10 @@
     color: var(--color--primaly);
   }
   33% {
-    color: #f93;
+    color: var(--color-animate-1);
   }
   66% {
-    color: #39f;
+    color: var(--color-animate-2);
   }
   100% {
     color: var(--color--primaly);
@@ -35,10 +35,10 @@
     background-color: var(--color--primaly);
   }
   33% {
-    background-color: #f93;
+    background-color: var(--color-animate-1);
   }
   66% {
-    background-color: #39f;
+    background-color: var(--color-animate-2);
   }
   100% {
     background-color: var(--color--primaly);

@@ -1,0 +1,33 @@
+/*
+ * アクセス
+ */
+.home-Access {
+  text-align: center;
+  font-size: .95rem;
+}
+
+.home-Access_Title {
+  font-size: 2.4rem;
+}
+
+.home-Access_Map {
+  display: block;
+  margin: 10px auto 2px;
+  max-width: 70%;
+}
+
+.home-Access_MapLink {
+  font-weight: 600;
+  font-size: .8rem;
+
+  & a {
+    display: inline-block;
+    text-decoration: none;
+    padding-bottom: 0;
+    border-bottom: 1px solid currentColor;
+
+    &:hover {
+      border-bottom: none;
+    }
+  }
+}

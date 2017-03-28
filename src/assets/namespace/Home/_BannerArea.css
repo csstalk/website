@@ -1,0 +1,24 @@
+/*
+ * バナーエリア
+ */
+.home-BannerArea {
+  display: flex;
+  background-color: #f2f2ef;
+  padding: 145px 10px 30px;
+  margin-top: -110px;
+}
+.home-BannerArea_Item {
+  flex: 1;
+  margin-right: 10px;
+
+  border: 1px solid #cbcbcb;
+  background-color: var(--background-color);
+
+  &:hover {
+    border: 1px solid currentColor;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
