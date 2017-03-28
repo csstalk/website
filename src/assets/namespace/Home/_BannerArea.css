@@ -10,6 +10,7 @@
 .home-BannerArea_Item {
   flex: 1;
   margin-right: 10px;
+  max-width: 192px;
 
   border: 1px solid #cbcbcb;
   background-color: var(--background-color);

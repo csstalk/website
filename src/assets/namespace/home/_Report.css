@@ -1,7 +1,9 @@
 .home-Report {
-  text-align: center;
-
   display: flex;
+  flex-wrap:wrap;
+  text-align: center;
+  align-items: center;
+
   flex-direction: column;
   @media (--sm-up) {
     flex-direction: row-reverse;
@@ -9,13 +11,17 @@
 
   & > * {
     flex: 1;
+    width: 100%;
+    min-height: calc(100vw * 500 / 650);
+    @media (--sm-up) {
+      min-height: 30vw;
+    }
   }
 }
 
 .home-Report_Body {
   color: var(--background-color);
   font-size: .95rem;
-  margin: 65px 0 60px;
 }
 
 .home-Report_Body .sw-Heading {
@@ -26,11 +32,6 @@
   position: relative;
   overflow: hidden;
   background-color: inherit;
-
-  @media (--sm-down) {
-    width: 100%;
-    min-height: calc(100vw * 500 / 650);
-  }
 }
 
 .home-Report_EyeCatch img {

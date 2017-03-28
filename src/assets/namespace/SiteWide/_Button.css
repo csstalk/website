@@ -56,7 +56,7 @@ button.sw-Button.sw-Button_alt(href="#" disabled) disabled
 
 
   /* ホバー時のアニメーション */
-  transition: all .3s;
+  transition: text-indent .3s;
   &:after {
     position: absolute;
     content: '●'; /* todo */
