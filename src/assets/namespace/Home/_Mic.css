@@ -1,14 +1,25 @@
 /*
  * マイクのアニメーション
  */
+.home {
+  position: relative;
+}
+
 .home-Mic {
   position: relative;
   width: 100%;
-  height: 1114px;
+  @media (--sm-up) {
+    height: 1114px;
+  }
 }
 
 .home-Mics {
+  @media (--sm-down) {
+    display: none;
+  }
+
   position: absolute;
+  z-index: 1;
   top: 0;
   left: 0;
   width: 100%;
@@ -19,11 +30,11 @@
   background: url('/assets/img/home/mic1.png') no-repeat center top;
 
   /* 全体がちょっと上にあがるアニメーション */
-  transition: all .4s ease;
+  transition: all .6s ease;
   transform: translateY(-30px);
   opacity: 0;
   &.home-Mic_Animate {
-    transform: translateY(-50px);
+    transform: translateY(-71px);
     opacity: 1;
   }
 }
@@ -51,9 +62,11 @@
   width: 0;
   height: 1114px;
   background: url('/assets/img/home/mic3.png') no-repeat left top;
+  opacity: 0;
 
   transition: all .6s ease .6s;
   @nest .home-Mic_Animate & {
     width: 1960px;
+    opacity: 1;
   }
 }
