@@ -5,7 +5,7 @@ export default () => {
     return false;
   }
 
-  $('body').toggleClass('home-DesignView', true);
+  $('body').toggleClass('home-DesignView', false);
 
   $(window).keydown((e) => {
     if (e.keyCode === 49) {
