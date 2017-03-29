@@ -16,7 +16,6 @@
 
 .home-BannerArea_Item {
   position: relative;
-  z-index: 2;
 
   flex: 1;
   margin-right: 10px;
