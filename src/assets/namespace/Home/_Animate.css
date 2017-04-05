@@ -1,0 +1,46 @@
+/*
+ * 文字色のアニメーション
+ */
+.home-AnimateText {
+  color: var(--color--primaly);
+  animation: home-AnimateText 60s linear infinite;
+}
+
+@keyframes home-AnimateText {
+  0% {
+    color: var(--color--primaly);
+  }
+  33% {
+    color: var(--color-animate-1);
+  }
+  66% {
+    color: var(--color-animate-2);
+  }
+  100% {
+    color: var(--color--primaly);
+  }
+}
+
+
+/*
+ * 背景色のアニメーション
+ */
+.home-AnimateBg {
+  background-color: var(--color--primaly);
+  animation: home-AnimateBg 60s linear infinite;
+}
+
+@keyframes home-AnimateBg {
+  0% {
+    background-color: var(--color--primaly);
+  }
+  33% {
+    background-color: var(--color-animate-1);
+  }
+  66% {
+    background-color: var(--color-animate-2);
+  }
+  100% {
+    background-color: var(--color--primaly);
+  }
+}

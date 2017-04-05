@@ -1,0 +1,36 @@
+/*
+ * 見出しのフォント指定
+ */
+.sw-Heading {
+  text-transform: uppercase;
+  font-family: var(--font--en);
+  font-weight: 600;
+}
+
+
+/*
+ * レスポンシブ用改行
+ */
+.sw-SpBreak {
+  display: block;
+  @media (--lg-up) {
+    display: none;
+  }
+}
+
+
+/*
+ * デザインチェック(デバッグ)用
+ */
+.home-DesignView {
+  background-size: 100% auto;
+  background-image: url(http://e-tam.net/~uenaka/test/css_talk/0111/sp.jpg);
+
+  @media (--sm-up) {
+    background: url(http://e-tam.net/~uenaka/test/css_talk/0111/css_talk.jpg) no-repeat center top;
+  }
+
+  & .st-Wrapper {
+    opacity: .5;
+  }
+}

@@ -1,0 +1,55 @@
+/*
+ * アクセス
+ */
+.home-Access {
+  position: relative;
+  text-align: center;
+  font-size: .95rem;
+
+  @media (--lg-up) {
+    width: calc(1170px / 2);
+    padding-left: 55px;
+    text-align: right;
+    margin: -140px auto 0 50%;
+    font-size: 1.1rem;
+  }
+}
+
+.home-Access_Title {
+  font-size: 2.4rem;
+  @media (--lg-up) {
+    font-size: 3.6rem;
+    line-height: 1;
+    margin-bottom: 5px;
+  }
+}
+
+.home-Access_Map {
+  display: block;
+  margin: 10px auto 2px;
+  max-width: 70%;
+
+  @media (--lg-up) {
+    margin-right: 0;
+    width: 450px;
+    max-width: inherit;
+    height: 530px;
+  }
+
+}
+
+.home-Access_MapLink {
+  font-weight: 600;
+  font-size: .8rem;
+
+  & a {
+    display: inline-block;
+    text-decoration: none;
+    padding-bottom: 0;
+    border-bottom: 1px solid currentColor;
+
+    &:hover {
+      border-bottom: none;
+    }
+  }
+}

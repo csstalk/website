@@ -24,6 +24,7 @@ import source from 'vinyl-source-stream';
 import runSequence from 'run-sequence';
 import rimraf from 'rimraf';
 import browserSync from 'browser-sync';
+import moment from 'moment';
 
 /**
  * 開発用用ディレクトリのパス。
@@ -66,14 +67,6 @@ const AUTOPREFIXER_BROWSERS = [
 ];
 
 /**
- * GitHub Pagesの独自ドメイン設定に必要なファイルです。
- */
-gulp.task('cname', () => {
-  gulp.src(develop.root + 'CNAME')
-  .pipe(gulp.dest(release.root));
-});
-
-/**
  * PugをHTMLにコンパイルします。
  */
 gulp.task('html', () => {
@@ -88,6 +81,7 @@ gulp.task('html', () => {
   // 各ページごとの`/`を除いたルート相対パスを`relativePath`に格納します。
   .pipe($.data(function(file) {
     locals.relativePath = path.relative(file.base, file.path.replace(/.pug$/, '.html'));
+    locals.moment = moment;
       return locals;
   }))
   .pipe($.pug({
@@ -260,7 +254,7 @@ gulp.task('browser-sync', () => {
  */
 gulp.task('build', ['iconfont'], function() {
   runSequence(
-    ['html', 'css', 'js', 'img', 'cname'],
+    ['html', 'css', 'js', 'img'],
     'styleguide'
     )
 });

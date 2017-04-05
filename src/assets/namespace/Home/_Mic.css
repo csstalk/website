@@ -1,0 +1,70 @@
+/*
+ * マイクのアニメーション
+ */
+.home {
+  position: relative;
+}
+
+.home-Mic {
+  position: relative;
+  width: 100%;
+  @media (--sm-up) {
+    height: 1114px;
+  }
+}
+
+.home-Mics {
+  @media (--sm-down) {
+    display: none;
+  }
+
+  position: absolute;
+  pointer-events: none;
+
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1114px;
+  overflow-x: hidden;
+
+  /* 全体がちょっと上にあがるアニメーション */
+  transition: all .6s ease;
+  transform: translateY(-10px);
+  opacity: 0;
+  &.home-Mic_Animate {
+    transform: translateY(-47px);
+    opacity: 1;
+  }
+}
+
+/* マイクのコードのアニメーション 1 */
+.home-MicCode1 {
+  position: absolute;
+  top: 0;
+  right: calc(50% - 780px);
+  width: 710px;
+  height: 1114px;
+  background: url('/assets/img/home/mic1.png') no-repeat right top;
+
+  transition: all .5s ease;
+  @nest .home-Mic_Animate & {
+    width: 1960px;
+  }
+}
+
+/* マイクのコードのアニメーション 2 */
+.home-MicCode2 {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 1180px);
+  width: 0;
+  height: 1114px;
+  background: url('/assets/img/home/mic2.png') no-repeat left top;
+  opacity: 0;
+
+  transition: all .6s ease .6s;
+  @nest .home-Mic_Animate & {
+    width: 1960px;
+    opacity: 1;
+  }
+}

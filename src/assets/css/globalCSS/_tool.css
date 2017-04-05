@@ -1,11 +1,11 @@
 @custom-selector :--onEvent :hover, :active, :focus;
 
-@custom-media --md-up (min-width: 768px);
-@custom-media --lg-up (min-width: 1080px);
-@custom-media --xl-up (min-width: 1440px);
-@custom-media --md-down (max-width: 767px);
-@custom-media --lg-down (max-width: 1079px);
-@custom-media --xl-down (max-width: 1439px);
+@custom-media --sm-up (width > 640px);
+@custom-media --md-up (width > 768px);
+@custom-media --lg-up (width > 1080px);
+@custom-media --sm-down (width <= 640px);
+@custom-media --md-down (width <= 768px);
+@custom-media --lg-down (width <= 1080px);
 @custom-media --default (--md-up);
 
 :root {
@@ -15,18 +15,18 @@
       display: block;
       clear: both;
     }
-  }
+  };
 
   --listUnstyled: {
     padding-left: 0;
     list-style-type: none;
-  }
+  };
 
   --truncate: {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-  }
+  };
 
   --srOnly: {
     position: absolute;
@@ -37,5 +37,5 @@
     overflow: hidden;
     padding: 0;
     clip: rect(0, 0, 0, 0);
-  }
+  };
 }

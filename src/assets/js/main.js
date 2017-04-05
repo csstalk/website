@@ -2,33 +2,12 @@
 
 window.jQuery = window.$ = require('jquery');
 
-import ResizeManager from './util/ResizeManager';
-import ScrollManager from './util/ScrollManager';
-
-import StructureModule1 from '../namespace/Structure/Module1/_Module1.js';
-
-const resizeManager = new ResizeManager();
-const scrollManager = new ScrollManager();
-
-export const mainResizeManager = resizeManager;
+import Mic from './Home/Mic';
+import DesignView from './util/DesignView';
 
 (() => {
   $(() => {
-    console.log('page loaded');
-
-    StructureModule1();
-
-    resizeManager.add(resized01);
-    resizeManager.init();
-
-    scrollManager.add(scroll01);
-    scrollManager.init();
+    Mic();
+    DesignView();
   });
-
-  const resized01 = () => {
-    console.log('is resized! 01');
-  };
-  const scroll01 = () => {
-    console.log('is scrolled! 01');
-  };
 })();

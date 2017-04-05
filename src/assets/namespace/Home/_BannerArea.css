@@ -1,0 +1,34 @@
+/*
+ * バナーエリア
+ */
+.home-BannerArea {
+  display: flex;
+  background-color: #f2f2ef;
+  padding: 145px 10px 30px;
+  margin-top: -110px;
+
+  @media (--lg-up) {
+    margin-top: -240px;
+    padding: 88px 50% 130px 0;
+    justify-content: flex-end;
+  }
+}
+
+.home-BannerArea_Item {
+  position: relative;
+
+  flex: 1;
+  margin-right: 10px;
+  max-width: 192px;
+
+  border: 1px solid #cbcbcb;
+  background-color: var(--background-color);
+
+  &:hover {
+    border: 1px solid currentColor;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
